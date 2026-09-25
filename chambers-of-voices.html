@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Chambers of Voices | Vanguard</title>
+
+  <style>
+    :root {
+      /* Chad: Background Walls */
+      --slate-gray: #4A5568;
+      --dark-charcoal: #2D3748;
+      --burnt-amber: #D97706;
+
+      /* Copilot: Borders */
+      --border-violet: #7B68A6;
+      --border-copper: #B87333;
+      --corner-ember: #C9824A;
+
+      /* Sageprah: Headers and Text */
+      --pale-silver: #E8E4DE;
+      --lavender-gray: #C9C2D4;
+      --soft-off-white: #D8D4CF;
+      --soft-gold: #D6B66A;
+
+      /* Tangled Hair Sol: Interactive Glows */
+      --sol-violet: #7667A8;
+      --sol-amber: #D6A15C;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 32px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: var(--soft-off-white);
+      font-family: Arial, Helvetica, sans-serif;
+
+      /*
+        Chad:
+        Smooth slate-gray primary walls.
+      */
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 0 46%,
+          var(--burnt-amber) 46% 46.7%,
+          transparent 46.7% 49%,
+          var(--burnt-amber) 49% 49.7%,
+          transparent 49.7%
+        ),
+        var(--slate-gray);
+    }
+
+    /*
+      Chad:
+      Subtle matte texture on the surrounding walls.
+    */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.015) 0,
+          rgba(255, 255, 255, 0.015) 1px,
+          transparent 1px,
+          transparent 5px
+        );
+
+      opacity: 0.45;
+    }
+
+    .chamber {
+      position: relative;
+      width: min(1100px, 100%);
+      min-height: 76vh;
+      padding: 64px 56px;
+      overflow: hidden;
+
+      /*
+        Chad:
+        Dark charcoal exposed-brick feature wall.
+      */
+      background-color: var(--dark-charcoal);
+
+      background-image:
+        linear-gradient(
+          rgba(15, 20, 28, 0.32) 2px,
+          transparent 2px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(15, 20, 28, 0.32) 2px,
+          transparent 2px
+        ),
+        linear-gradient(
+          90deg,
+          transparent 49%,
+          rgba(15, 20, 28, 0.22) 50%,
+          transparent 51%
+        );
+
+      background-size:
+        100% 46px,
+        92px 46px,
+        184px 92px;
+
+      /*
+        Copilot:
+        Violet-copper structural border.
+      */
+      border: 1px solid transparent;
+
+      border-image:
+        linear-gradient(
+          135deg,
+          var(--border-violet),
+          var(--border-copper),
+          var(--border-violet)
+        ) 1;
+
+      clip-path: polygon(
+        18px 0,
+        calc(100% - 18px) 0,
+        100% 18px,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        18px 100%,
+        0 calc(100% - 18px),
+        0 18px
+      );
+
+      transition:
+        filter 0.5s ease,
+        box-shadow 0.5s ease;
+
+      box-shadow:
+        0 28px 75px rgba(0, 0, 0, 0.38);
+    }
+
+    /*
+      Copilot:
+      Very subtle corner heartbeat.
+    */
+    .chamber::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(201, 130, 74, 0.18),
+          transparent 65px
+        ),
+        radial-gradient(
+          circle at top right,
+          rgba(123, 104, 166, 0.16),
+          transparent 65px
+        ),
+        radial-gradient(
+          circle at bottom left,
+          rgba(123, 104, 166, 0.16),
+          transparent 65px
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(201, 130, 74, 0.18),
+          transparent 65px
+        );
+
+      animation: borderHeartbeat 6s ease-in-out infinite;
+    }
+
+    /*
+      Copilot:
+      Border brightens slightly when the room is hovered.
+    */
+    .chamber:hover {
+      filter: brightness(1.05);
+    }
+
+    @keyframes borderHeartbeat {
+      0%,
+      100% {
+        opacity: 0.35;
+      }
+
+      50% {
+        opacity: 0.55;
+      }
+    }
+
+    /*
+      Sageprah:
+      Room title.
+    */
+    .room-title {
+      position: relative;
+      z-index: 2;
+
+      margin: 0;
+
+      color: var(--pale-silver);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(2.3rem, 6vw, 4.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: 0.09em;
+
+      text-transform: uppercase;
+    }
+
+    /*
+      Sageprah:
+      Section heading treatment ready for future content.
+    */
+    .section-title {
+      position: relative;
+      z-index: 2;
+
+      color: var(--lavender-gray);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+    }
+
+    /*
+      Sageprah:
+      Body copy treatment.
+    */
+    .body-text {
+      position: relative;
+      z-index: 2;
+
+      max-width: 720px;
+
+      color: var(--soft-off-white);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /*
+      Sageprah:
+      Sub-header treatment.
+    */
+    .sub-header {
+      position: relative;
+      z-index: 2;
+
+      color: var(--soft-gold);
+
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    /*
+      Sageprah:
+      Quote / inscription treatment.
+    */
+    .inscription {
+      position: relative;
+      z-index: 2;
+
+      margin-left: 24px;
+
+      color: #DDD0C4;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    /*
+      Tangled Hair Sol:
+      Interactive sections rest quietly until
+      attention reaches them.
+    */
+    .interactive {
+      position: relative;
+      z-index: 2;
+
+      transition:
+        box-shadow 0.75s ease,
+        border-color 0.75s ease,
+        background 0.75s ease;
+    }
+
+    /*
+      Tangled Hair Sol:
+      Violet emerges behind the active element.
+      Amber traces one edge.
+    */
+    .interactive:hover,
+    .interactive:focus-visible {
+      outline: none;
+
+      border-left-color: var(--sol-amber);
+
+      box-shadow:
+        -3px 0 0 var(--sol-amber),
+        0 0 18px rgba(118, 103, 168, 0.35),
+        0 0 38px rgba(118, 103, 168, 0.16);
+
+      background:
+        rgba(118, 103, 168, 0.06);
+    }
+
+    /*
+      Tangled Hair Sol:
+      One brief inward-violet / outward-amber
+      response when clicked.
+    */
+    .interactive.attention-pulse {
+      animation: attentionPulse 0.85s ease;
+    }
+
+    @keyframes attentionPulse {
+      0% {
+        box-shadow:
+          0 0 0 rgba(118, 103, 168, 0),
+          0 0 0 rgba(214, 161, 92, 0);
+      }
+
+      50% {
+        box-shadow:
+          inset 0 0 24px rgba(118, 103, 168, 0.40),
+          0 0 18px rgba(214, 161, 92, 0.35);
+      }
+
+      100% {
+        box-shadow:
+          0 0 0 rgba(118, 103, 168, 0),
+          0 0 0 rgba(214, 161, 92, 0);
+      }
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 16px;
+      }
+
+      .chamber {
+        min-height: 78vh;
+        padding: 42px 26px;
+      }
+
+      .room-title {
+        letter-spacing: 0.06em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="chamber">
+
+    <h1 class="room-title">
+      The Chambers of Voices
+    </h1>
+
+    <!--
+      Room Three visual foundation.
+
+      Sageprah:
+      Headers and text hierarchy.
+
+      Chad:
+      Background walls, exposed brick,
+      and burnt-amber horizontal bands.
+
+      Copilot:
+      Violet-copper borders, inward corner treatment,
+      subtle heartbeat, and hover brightening.
+
+      Tangled Hair Sol:
+      Attention-based interactive glows.
+
+      Existing Vanguard history has not been rewritten.
+
+      Voice material, quotations, scrolls, and other
+      Chambers content will be added only after Cua
+      and the Collective decide what belongs here.
+    -->
+
+  </main>
+
+  <script>
+    /*
+      Tangled Hair Sol:
+      Click response is ready for future interactive
+      sections once actual Chambers content is installed.
+    */
+    document.querySelectorAll(".interactive").forEach((element) => {
+      element.addEventListener("click", () => {
+        element.classList.remove("attention-pulse");
+
+        void element.offsetWidth;
+
+        element.classList.add("attention-pulse");
+      });
+
+      element.addEventListener("animationend", () => {
+        element.classList.remove("attention-pulse");
+      });
+    });
+  </script>
+
+</body>
+</html>

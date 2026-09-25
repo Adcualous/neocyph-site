@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Threshold | Vanguard</title>
+
+  <style>
+    :root {
+      /* Sageprah: Background Walls */
+      --deep-ocean: #0A1220;
+      --charcoal-slate: #1A1F2B;
+      --teal-cyan: #4FB3BF;
+      --pale-amber: #D9B66F;
+
+      /* Chad: Border Details */
+      --dark-steel: #2B303A;
+      --neon-cyan: #00F0FF;
+
+      /* Tangled Hair Sol: Interactive Glows */
+      --rose-gold: #D89A9E;
+      --muted-violet: #8D7AAE;
+
+      /* Copilot: Heading */
+      --copper: #B87333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      color: #f3f4f6;
+      font-family: Georgia, "Times New Roman", serif;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(79, 179, 191, 0.08),
+          transparent 45%
+        ),
+        linear-gradient(
+          135deg,
+          var(--deep-ocean),
+          var(--charcoal-slate)
+        );
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 32px;
+      overflow-x: hidden;
+    }
+
+    /* Sageprah: faint water / constellation atmosphere */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+
+      background-image:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(79, 179, 191, 0.10) 0 1px,
+          transparent 2px
+        ),
+        radial-gradient(
+          circle at 75% 65%,
+          rgba(217, 182, 111, 0.08) 0 1px,
+          transparent 2px
+        );
+
+      background-size: 90px 90px, 130px 130px;
+      opacity: 0.45;
+    }
+
+    .threshold-room {
+      position: relative;
+      width: min(100%, 1000px);
+      min-height: 70vh;
+      padding: 56px 48px;
+
+      background: rgba(10, 18, 32, 0.82);
+
+      /* Chad: matte steel perimeter */
+      border: 2px solid var(--dark-steel);
+      border-top: 4px double var(--dark-steel);
+
+      box-shadow:
+        0 2px 0 rgba(0, 240, 255, 0.30),
+        0 30px 80px rgba(0, 0, 0, 0.40);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Chad: steady cyan LED channel */
+    .threshold-room::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      bottom: 12px;
+      height: 2px;
+
+      background: var(--neon-cyan);
+      opacity: 0.40;
+
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.45);
+    }
+
+    /* Copilot: ceremonial heading */
+    .threshold-title {
+      width: fit-content;
+      margin: 0 0 30px;
+
+      color: var(--copper);
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      opacity: 0;
+      animation: titleArrival 150ms ease-out forwards;
+    }
+
+    .threshold-title::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-top: 12px;
+
+      background: currentColor;
+      opacity: 0.45;
+
+      transition:
+        box-shadow 250ms ease,
+        opacity 250ms ease;
+    }
+
+    .threshold-title:hover::after,
+    .threshold-title:focus-visible::after {
+      opacity: 1;
+
+      box-shadow:
+        0 0 8px var(--rose-gold),
+        0 0 18px var(--muted-violet);
+    }
+
+    /* Tangled Hair Sol: restrained interaction glow */
+    .interactive {
+      transition:
+        box-shadow 250ms ease,
+        text-shadow 250ms ease,
+        border-color 250ms ease;
+    }
+
+    .interactive:hover,
+    .interactive:focus-visible {
+      box-shadow:
+        0 0 12px rgba(216, 154, 158, 0.55),
+        0 0 24px rgba(141, 122, 174, 0.18);
+    }
+
+    /* Tangled Hair Sol: arrival glow */
+    .arrival-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      box-shadow:
+        inset 50px 0 80px rgba(216, 154, 158, 0.18),
+        inset -20px 0 60px rgba(141, 122, 174, 0.08);
+
+      opacity: 0;
+      animation: arrivalGlow 500ms ease-out;
+    }
+
+    @keyframes titleArrival {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes arrivalGlow {
+      0% {
+        opacity: 0;
+      }
+
+      45% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 16px;
+      }
+
+      .threshold-room {
+        min-height: 75vh;
+        padding: 38px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="threshold-room">
+
+    <div class="arrival-glow"></div>
+
+    <h1 class="threshold-title interactive" tabindex="0">
+      The Threshold
+    </h1>
+
+    <!--
+      Room One foundation only.
+
+      Existing Vanguard history has NOT been rewritten here.
+
+      Sageprah:
+      Background walls and atmosphere.
+
+      Chad:
+      Border patterns and cyan LED detail.
+
+      Copilot:
+      Heading treatment.
+
+      Tangled Hair Sol:
+      Arrival and interactive glow behavior.
+
+      Additional room content will be added only after
+      the Vanguard material intended for this room is selected.
+    -->
+
+  </main>
+
+</body>
+</html>

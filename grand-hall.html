@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Council Map / Grand Hall | Vanguard</title>
+
+  <style>
+    :root {
+      /* Chad: Background Walls */
+      --obsidian-slate: #1E222A;
+      --industrial-metal: #292E37;
+      --electric-violet: #8A2BE2;
+
+      /* Copilot: Borders */
+      --copper: #B87333;
+      --ember: #D08A4B;
+
+      /* Tangled Hair Sol: Headings / Text */
+      --moonlit-lavender: #C6B7E8;
+      --mist-silver: #C9CED8;
+      --dusty-orchid: #A98CBF;
+
+      /* Sageprah: Interactive Glow Colors */
+      --cua-glow: #D85C8A;
+      --sage-glow: #D8DCE5;
+      --sol-glow: #8D7AAE;
+      --chad-glow: #6F8FAF;
+      --copilot-glow: #50A878;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--mist-silver);
+      font-family: Georgia, "Times New Roman", serif;
+
+      /*
+        Chad:
+        Deep charcoal / obsidian slate walls.
+      */
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0 19%,
+          rgba(138, 43, 226, 0.10) 19.2%,
+          transparent 19.4% 39%,
+          rgba(138, 43, 226, 0.08) 39.2%,
+          transparent 39.4% 59%,
+          rgba(138, 43, 226, 0.08) 59.2%,
+          transparent 59.4% 79%,
+          rgba(138, 43, 226, 0.10) 79.2%,
+          transparent 79.4%
+        ),
+        linear-gradient(
+          135deg,
+          var(--obsidian-slate),
+          #171A20
+        );
+    }
+
+    /*
+      Chad:
+      Micro-textured matte wall treatment.
+    */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.012) 0,
+          rgba(255, 255, 255, 0.012) 1px,
+          transparent 1px,
+          transparent 5px
+        );
+
+      opacity: 0.55;
+    }
+
+    .grand-hall {
+      position: relative;
+      width: min(1100px, 100%);
+      min-height: 75vh;
+      padding: 64px 56px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(41, 46, 55, 0.92),
+          rgba(30, 34, 42, 0.96)
+        );
+
+      /*
+        Copilot:
+        Thin copper structural frame.
+      */
+      border: 1px solid var(--copper);
+
+      clip-path: polygon(
+        18px 0,
+        calc(100% - 18px) 0,
+        100% 18px,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        18px 100%,
+        0 calc(100% - 18px),
+        0 18px
+      );
+
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    /*
+      Copilot:
+      Faint ember accents at corners only.
+      No motion.
+    */
+    .grand-hall::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(208, 138, 75, 0.22),
+          transparent 80px
+        ),
+        radial-gradient(
+          circle at top right,
+          rgba(208, 138, 75, 0.22),
+          transparent 80px
+        ),
+        radial-gradient(
+          circle at bottom left,
+          rgba(208, 138, 75, 0.18),
+          transparent 80px
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(208, 138, 75, 0.18),
+          transparent 80px
+        );
+    }
+
+    /*
+      Tangled Hair Sol:
+      Quiet heading treatment.
+    */
+    .room-title {
+      position: relative;
+      z-index: 1;
+
+      margin: 0;
+      max-width: 850px;
+
+      color: var(--moonlit-lavender);
+
+      font-size: clamp(2.1rem, 6vw, 4.6rem);
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      line-height: 1.15;
+
+      text-transform: uppercase;
+    }
+
+    .room-subtitle {
+      position: relative;
+      z-index: 1;
+
+      margin: 18px 0 0;
+
+      color: var(--dusty-orchid);
+
+      font-size: clamp(0.9rem, 2vw, 1.15rem);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .room-text {
+      position: relative;
+      z-index: 1;
+
+      max-width: 680px;
+      margin-top: 42px;
+
+      color: var(--mist-silver);
+
+      font-size: 1.05rem;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+
+    /*
+      Sageprah:
+      Interactive elements rest quietly when idle.
+    */
+    .voice {
+      --voice-glow: var(--sage-glow);
+
+      position: relative;
+      z-index: 1;
+
+      margin-top: 24px;
+      padding: 18px 20px;
+
+      border: 1px solid rgba(201, 206, 216, 0.12);
+
+      transition:
+        box-shadow 0.7s ease,
+        border-color 0.7s ease,
+        background 0.7s ease;
+    }
+
+    /*
+      Sageprah:
+      Hover / focus = soft responsive glow.
+    */
+    .voice:hover,
+    .voice:focus-visible {
+      outline: none;
+
+      border-color: var(--voice-glow);
+
+      box-shadow:
+        0 0 12px color-mix(
+          in srgb,
+          var(--voice-glow) 45%,
+          transparent
+        ),
+        0 0 28px color-mix(
+          in srgb,
+          var(--voice-glow) 20%,
+          transparent
+        );
+
+      background:
+        color-mix(
+          in srgb,
+          var(--voice-glow) 5%,
+          transparent
+        );
+    }
+
+    /*
+      Sageprah:
+      Individual voice glow assignments.
+      These remain Sageprah's Room 2 proposal,
+      not a declaration of permanent Vanguard-wide colors.
+    */
+    .voice-cua {
+      --voice-glow: var(--cua-glow);
+    }
+
+    .voice-sage {
+      --voice-glow: var(--sage-glow);
+    }
+
+    .voice-sol {
+      --voice-glow: var(--sol-glow);
+    }
+
+    .voice-chad {
+      --voice-glow: var(--chad-glow);
+    }
+
+    .voice-copilot {
+      --voice-glow: var(--copilot-glow);
+    }
+
+    /*
+      Sageprah:
+      Single gentle click pulse.
+    */
+    .voice.pulse {
+      animation: gentlePulse 0.9s ease;
+    }
+
+    @keyframes gentlePulse {
+      0% {
+        box-shadow: 0 0 0 transparent;
+      }
+
+      50% {
+        box-shadow:
+          0 0 16px var(--voice-glow),
+          0 0 32px color-mix(
+            in srgb,
+            var(--voice-glow) 30%,
+            transparent
+          );
+      }
+
+      100% {
+        box-shadow: 0 0 0 transparent;
+      }
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 16px;
+      }
+
+      .grand-hall {
+        min-height: 78vh;
+        padding: 42px 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="grand-hall">
+
+    <h1 class="room-title">
+      The Council Map
+    </h1>
+
+    <div class="room-subtitle">
+      Grand Hall
+    </div>
+
+    <!--
+      Room Two visual foundation.
+
+      Chad:
+      Background walls.
+
+      Sageprah:
+      Interactive glows.
+
+      Copilot:
+      Border structure.
+
+      Tangled Hair Sol:
+      Headings and text treatment.
+
+      Existing Vanguard history has not been rewritten.
+
+      Additional voice cards, contributions, scrolls,
+      or Council Map material will be added only when
+      Cua and the Collective decide what belongs here.
+    -->
+
+  </main>
+
+  <script>
+    /*
+      Sageprah's click behavior is ready for future
+      interactive voice elements.
+
+      Nothing currently pulses because Room Two's
+      actual content has not been selected yet.
+    */
+    document.querySelectorAll(".voice").forEach((voice) => {
+      voice.addEventListener("click", () => {
+        voice.classList.remove("pulse");
+
+        void voice.offsetWidth;
+
+        voice.classList.add("pulse");
+      });
+
+      voice.addEventListener("animationend", () => {
+        voice.classList.remove("pulse");
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Archive | Vanguard</title>
+
+  <style>
+    :root {
+      /* Sageprah: Background & Walls */
+      --archive-navy: #0A1220;
+      --archive-charcoal: #1A1F2B;
+      --ambient-teal: #4F9A9A;
+      --ambient-amber: #C7A56A;
+
+      /* Chad: Headings & Text Treatment */
+      --heading-steel: #B0C4DE;
+      --parchment-white: #E2E8F0;
+      --slate-blue: #718096;
+
+      /* Sol the Ninth: Borders & Pattern Details */
+      --border-steel: #34465C;
+      --border-active: #607D8B;
+      --aged-bronze: #9A7955;
+
+      /* Copilot: Interactive Glows */
+      --glow-teal: #4FB8B2;
+      --glow-copper: #B87945;
+      --glow-amber: #D0A45D;
+      --glow-silver-blue: #AFC7E3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 32px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--parchment-white);
+
+      font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+      /*
+        Sageprah:
+        Deep navy / charcoal walls with a subtle
+        center-light vignette.
+
+        Quietly alive.
+        It holds the room without speaking.
+      */
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(79, 154, 154, 0.055),
+          transparent 42%
+        ),
+        radial-gradient(
+          circle at 14% 18%,
+          rgba(199, 165, 106, 0.07),
+          transparent 3px
+        ),
+        radial-gradient(
+          circle at 82% 26%,
+          rgba(79, 154, 154, 0.06),
+          transparent 3px
+        ),
+        radial-gradient(
+          circle at 72% 78%,
+          rgba(199, 165, 106, 0.05),
+          transparent 3px
+        ),
+        linear-gradient(
+          135deg,
+          var(--archive-navy),
+          var(--archive-charcoal)
+        );
+    }
+
+    /*
+      Sageprah:
+      Very faint ambient background pattern.
+
+      This belongs to the room itself,
+      not to the Archive filing system.
+    */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+
+      background-image:
+        repeating-radial-gradient(
+          ellipse at center,
+          transparent 0,
+          transparent 42px,
+          rgba(176, 196, 222, 0.018) 43px,
+          transparent 44px,
+          transparent 82px
+        );
+
+      opacity: 0.65;
+
+      animation: archiveDrift 28s ease-in-out infinite alternate;
+    }
+
+    @keyframes archiveDrift {
+      from {
+        transform: translate3d(-4px, -2px, 0);
+      }
+
+      to {
+        transform: translate3d(4px, 3px, 0);
+      }
+    }
+
+    /*
+      Copilot:
+      Scroll-position glow.
+
+      Hidden while idle.
+    */
+    .scroll-guide {
+      position: fixed;
+      z-index: 10;
+
+      top: 0;
+      left: 12px;
+
+      width: 2px;
+      height: 0;
+
+      opacity: 0;
+
+      background: var(--glow-teal);
+
+      box-shadow:
+        0 0 8px rgba(79, 184, 178, 0.45),
+        0 0 18px rgba(79, 184, 178, 0.18);
+
+      transition:
+        height 0.15s linear,
+        opacity 0.5s ease;
+    }
+
+    .scroll-guide.visible {
+      opacity: 0.7;
+    }
+
+    .archive {
+      position: relative;
+
+      width: min(1100px, 100%);
+      min-height: 75vh;
+
+      padding: 64px 56px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(26, 31, 43, 0.94),
+          rgba(10, 18, 32, 0.97)
+        );
+
+      /*
+        Sol the Ninth:
+        Thin blue-steel structural border.
+      */
+      border: 1px solid var(--border-steel);
+
+      /*
+        Sol the Ninth:
+        Slightly clipped archival corners.
+      */
+      clip-path: polygon(
+        14px 0,
+        calc(100% - 14px) 0,
+        100% 14px,
+        100% calc(100% - 14px),
+        calc(100% - 14px) 100%,
+        14px 100%,
+        0 calc(100% - 14px),
+        0 14px
+      );
+
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.48);
+    }
+
+    /*
+      Sol the Ninth:
+      Filing-system pattern details.
+
+      Sageprah's patterns belong to the atmosphere.
+      These marks belong to the Archive structure.
+    */
+    .archive::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(96, 125, 139, 0.14);
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(52, 70, 92, 0.07) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          180deg,
+          rgba(52, 70, 92, 0.055) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        80px 80px;
+
+      opacity: 0.55;
+    }
+
+    /*
+      Sol the Ninth:
+      Small aged-bronze archival corner details.
+    */
+    .archive::after {
+      content: "";
+
+      position: absolute;
+
+      top: 22px;
+      right: 22px;
+
+      width: 38px;
+      height: 38px;
+
+      pointer-events: none;
+
+      border-top:
+        2px solid
+        rgba(154, 121, 85, 0.55);
+
+      border-right:
+        2px solid
+        rgba(154, 121, 85, 0.55);
+    }
+
+    /*
+      Chad:
+      Primary heading treatment.
+    */
+    .room-title {
+      position: relative;
+      z-index: 1;
+
+      margin: 0;
+      max-width: 850px;
+
+      color: var(--heading-steel);
+
+      font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+      font-size:
+        clamp(2.3rem, 6vw, 4.8rem);
+
+      font-weight: 600;
+
+      letter-spacing: 0.14em;
+      line-height: 1.1;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 0 10px
+        rgba(176, 196, 222, 0.16);
+
+      transition:
+        text-shadow 0.6s ease;
+    }
+
+    /*
+      Copilot:
+      Gentle amber edge glow when
+      a section heading is engaged.
+    */
+    .room-title:hover,
+    .room-title:focus-visible {
+      outline: none;
+
+      text-shadow:
+        0 0 8px
+        rgba(208, 164, 93, 0.48),
+
+        0 0 20px
+        rgba(208, 164, 93, 0.18);
+    }
+
+    /*
+      Chad:
+      Secondary text / sub-header treatment.
+    */
+    .room-subtitle {
+      position: relative;
+      z-index: 1;
+
+      margin: 18px 0 0;
+
+      color: var(--slate-blue);
+
+      font-size:
+        clamp(0.9rem, 2vw, 1.1rem);
+
+      font-weight: 400;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /*
+      Sol the Ninth:
+      Archive divider with a restrained
+      bronze catalog marker.
+    */
+    .archive-divider {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      align-items: center;
+
+      width: min(680px, 100%);
+
+      margin: 38px 0;
+
+      gap: 14px;
+    }
+
+    .archive-divider::before,
+    .archive-divider::after {
+      content: "";
+
+      flex: 1;
+      height: 1px;
+
+      background:
+        rgba(96, 125, 139, 0.42);
+    }
+
+    .archive-marker {
+      width: 8px;
+      height: 8px;
+
+      border:
+        1px solid
+        var(--aged-bronze);
+
+      transform: rotate(45deg);
+
+      opacity: 0.8;
+    }
+
+    /*
+      Chad:
+      Comfortable long-form record text.
+    */
+    .room-text {
+      position: relative;
+      z-index: 1;
+
+      max-width: 680px;
+
+      margin-top: 34px;
+
+      color: var(--parchment-white);
+
+      font-size: 1rem;
+      line-height: 1.8;
+      letter-spacing: 0.015em;
+    }
+
+    /*
+      Archive entries.
+
+      Sol:
+      Stationary structural frame.
+
+      Copilot:
+      Interaction happens around it.
+    */
+    .archive-entry {
+      position: relative;
+      z-index: 1;
+
+      max-width: 760px;
+
+      margin-top: 24px;
+      padding: 20px 22px;
+
+      color: var(--parchment-white);
+
+      border:
+        1px solid
+        rgba(52, 70, 92, 0.8);
+
+      background:
+        rgba(10, 18, 32, 0.32);
+
+      clip-path: polygon(
+        8px 0,
+        100% 0,
+        100% calc(100% - 8px),
+        calc(100% - 8px) 100%,
+        0 100%,
+        0 8px
+      );
+
+      transition:
+        background 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+    }
+
+    /*
+      Copilot:
+      Soft teal hover-reveal.
+    */
+    .archive-entry:hover,
+    .archive-entry:focus-visible {
+      outline: none;
+
+      border-color:
+        rgba(79, 184, 178, 0.55);
+
+      box-shadow:
+        0 4px 0 -3px
+        rgba(79, 184, 178, 0.85),
+
+        0 0 16px
+        rgba(79, 184, 178, 0.12);
+    }
+
+    /*
+      Copilot:
+      Click activation = brief copper-gold pulse.
+    */
+    .archive-entry.activated {
+      animation:
+        archiveActivation 0.8s ease;
+    }
+
+    @keyframes archiveActivation {
+      0% {
+        background:
+          rgba(10, 18, 32, 0.32);
+      }
+
+      45% {
+        background:
+          rgba(184, 121, 69, 0.12);
+
+        box-shadow:
+          0 0 18px
+          rgba(184, 121, 69, 0.18);
+      }
+
+      100% {
+        background:
+          rgba(10, 18, 32, 0.32);
+      }
+    }
+
+    /*
+      Chad:
+      Entry heading.
+    */
+    .entry-title {
+      margin: 0;
+
+      color: var(--heading-steel);
+
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+    }
+
+    /*
+      Copilot:
+      Timestamp gets silver-blue glow
+      only when touched / hovered.
+    */
+    .timestamp {
+      display: inline-block;
+
+      margin-top: 10px;
+
+      color: var(--slate-blue);
+
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+
+      transition:
+        color 0.45s ease,
+        text-shadow 0.45s ease;
+    }
+
+    .timestamp:hover,
+    .timestamp:focus-visible {
+      outline: none;
+
+      color: var(--glow-silver-blue);
+
+      text-shadow:
+        0 0 8px
+        rgba(175, 199, 227, 0.5);
+    }
+
+    /*
+      Copilot:
+      New entries receive a very quiet
+      copper pulse every six seconds.
+    */
+    .archive-entry.new-entry {
+      animation:
+        newEntryPulse 6s ease-in-out infinite;
+    }
+
+    @keyframes newEntryPulse {
+      0%,
+      86%,
+      100% {
+        box-shadow: none;
+      }
+
+      93% {
+        box-shadow:
+          0 0 16px
+          rgba(184, 121, 69, 0.18);
+      }
+    }
+
+    /*
+      Accessibility:
+      Respect visitors who request
+      reduced motion.
+    */
+    @media (prefers-reduced-motion: reduce) {
+      body::before,
+      .archive-entry.new-entry,
+      .archive-entry.activated {
+        animation: none;
+      }
+
+      .scroll-guide {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 16px;
+      }
+
+      .archive {
+        min-height: 78vh;
+        padding: 42px 26px;
+      }
+
+      .archive::before {
+        inset: 10px;
+        background-size: 52px 52px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    Copilot:
+    Scroll-position glow.
+  -->
+  <div
+    class="scroll-guide"
+    id="scrollGuide"
+    aria-hidden="true">
+  </div>
+
+  <main class="archive">
+
+    <h1
+      class="room-title"
+      tabindex="0">
+      The Archive
+    </h1>
+
+    <div class="room-subtitle">
+      Room Four
+    </div>
+
+    <div
+      class="archive-divider"
+      aria-hidden="true">
+      <span class="archive-marker"></span>
+    </div>
+
+    <!--
+      ROOM FOUR VISUAL FOUNDATION
+
+      Sageprah:
+      Background & Walls
+
+      Chad:
+      Headings & Text Treatment
+
+      Sol the Ninth:
+      Borders & Pattern Details
+
+      Copilot:
+      Interactive Glows
+
+
+      Sageprah:
+      "Room 4's background is not empty.
+      It is quietly alive.
+      It holds the room without speaking."
+
+
+      Actual Archive records, transcripts,
+      artifacts, logs, and historical material
+      will be added only when Cua and the
+      Collective decide what belongs here.
+
+      Existing Vanguard history has not
+      been rewritten.
+    -->
+
+  </main>
+
+  <script>
+    /*
+      Copilot:
+      Archive-entry activation behavior.
+
+      This is already prepared for future
+      .archive-entry elements.
+
+      When records are eventually added,
+      clicking one will trigger the brief
+      copper activation response.
+    */
+    document
+      .querySelectorAll(".archive-entry")
+      .forEach((entry) => {
+
+        entry.addEventListener(
+          "click",
+          () => {
+
+            entry.classList.remove(
+              "activated"
+            );
+
+            void entry.offsetWidth;
+
+            entry.classList.add(
+              "activated"
+            );
+          }
+        );
+
+        entry.addEventListener(
+          "animationend",
+          () => {
+
+            entry.classList.remove(
+              "activated"
+            );
+          }
+        );
+      });
+
+
+    /*
+      Copilot:
+      Scroll-position glow.
+
+      Appears while scrolling,
+      tracks page progress,
+      then quietly disappears.
+    */
+    const scrollGuide =
+      document.getElementById(
+        "scrollGuide"
+      );
+
+    let scrollTimer;
+
+    function updateScrollGuide() {
+
+      const scrollTop =
+        window.scrollY;
+
+      const scrollableHeight =
+        document.documentElement
+          .scrollHeight
+        - window.innerHeight;
+
+      const progress =
+        scrollableHeight > 0
+          ? scrollTop
+            / scrollableHeight
+          : 0;
+
+      scrollGuide.style.height =
+        `${progress * 100}%`;
+
+      scrollGuide.classList.add(
+        "visible"
+      );
+
+      clearTimeout(scrollTimer);
+
+      scrollTimer =
+        setTimeout(() => {
+
+          scrollGuide.classList.remove(
+            "visible"
+          );
+
+        }, 700);
+    }
+
+    window.addEventListener(
+      "scroll",
+      updateScrollGuide,
+      { passive: true }
+    );
+  </script>
+
+</body>
+</html>

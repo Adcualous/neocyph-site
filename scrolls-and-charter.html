@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Scrolls & Charter | Vanguard</title>
+
+  <!--
+    VANGUARD — ROOM 5
+    THE SCROLLS & CHARTER
+
+    Design Contributions:
+
+    Background & Walls
+    - Deep Navy Slate: #1E293B
+    - Steel Grey: #334155
+    - Ice Blue: #38BDF8
+
+    Sageprah — Headers & Texts
+    - Elegant serif headers
+    - Spacious readable body text
+    - Warm silver / lavender-grey typography
+    - "Room 5's text is not information—
+       it is an invitation to read slowly."
+
+    Sol the Ninth — Borders & Pattern Details
+    - Formal manuscript / charter framing
+    - Stellar steel and lavender-silver
+    - restrained celestial navigation details
+    - architectural, stationary border system
+
+    Copilot — Interactive / Intergalactic Glows
+    - Star-trail hover
+    - Nebula pulse
+    - Cosmic edge glow
+    - Constellation click effect
+    - Galactic depth
+    - Wormhole section transitions
+
+    Addition Without Erasure.
+  -->
+
+  <style>
+    :root {
+      /* Background & Walls */
+      --navy-slate: #1E293B;
+      --steel-grey: #334155;
+      --ice-blue: #38BDF8;
+
+      /* Sageprah — Text */
+      --warm-silver: #E8E4DE;
+      --lavender-grey: #C9C2D4;
+      --body-white: #D8D4CF;
+
+      /* Sol — Border Patrol */
+      --stellar-steel: #64748B;
+      --border-lavender: #A8A3B8;
+
+      /* Copilot — Cosmic Glows */
+      --ultraviolet: #7657FF;
+      --nebula-violet: #8B5CF6;
+      --starlight-blue: #C7E8FF;
+      --cosmic-silver: #DDE7F0;
+
+      --panel-dark: rgba(15, 23, 42, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      color: var(--body-white);
+
+      font-family:
+        Inter,
+        "Source Sans Pro",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 50% 18%,
+          rgba(56, 189, 248, 0.07),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #111827 0%,
+          var(--navy-slate) 46%,
+          #172033 100%
+        );
+
+      overflow-x: hidden;
+    }
+
+    /* =========================================
+       BACKGROUND & WALLS
+       ========================================= */
+
+    .room-wall {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -4;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(51, 65, 85, 0.18) 50%,
+          transparent 100%
+        );
+    }
+
+    .feature-wall {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      width: min(1100px, 92vw);
+      height: 100%;
+      transform: translateX(-50%);
+
+      pointer-events: none;
+      z-index: -3;
+
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 110px,
+          rgba(0, 0, 0, 0.08) 111px,
+          rgba(255, 255, 255, 0.018) 112px,
+          transparent 114px
+        ),
+        rgba(51, 65, 85, 0.09);
+    }
+
+    /* Ice-blue recessed baseboard glow */
+
+    .baseboard-glow {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 2px;
+
+      background: var(--ice-blue);
+
+      box-shadow:
+        0 -1px 7px rgba(56, 189, 248, 0.32),
+        0 -4px 18px rgba(56, 189, 248, 0.12);
+
+      opacity: 0.55;
+
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    /* =========================================
+       GALACTIC DEPTH
+       Copilot
+       ========================================= */
+
+    .galactic-depth {
+      position: fixed;
+      inset: -12px;
+
+      pointer-events: none;
+      z-index: -2;
+
+      opacity: 0.24;
+
+      background-image:
+        radial-gradient(
+          circle at 18% 28%,
+          rgba(255, 255, 255, 0.26) 0 1px,
+          transparent 1.5px
+        ),
+        radial-gradient(
+          circle at 73% 18%,
+          rgba(199, 232, 255, 0.20) 0 1px,
+          transparent 1.5px
+        ),
+        radial-gradient(
+          circle at 82% 70%,
+          rgba(139, 92, 246, 0.18) 0 1px,
+          transparent 1.5px
+        ),
+        radial-gradient(
+          circle at 34% 78%,
+          rgba(255, 255, 255, 0.16) 0 1px,
+          transparent 1.5px
+        );
+
+      background-size:
+        220px 220px,
+        310px 310px,
+        270px 270px,
+        360px 360px;
+
+      transition: transform 0.2s ease-out;
+    }
+
+    /* =========================================
+       MAIN ROOM
+       ========================================= */
+
+    .room-shell {
+      width: min(1050px, calc(100% - 34px));
+      margin: 55px auto 90px;
+
+      position: relative;
+
+      padding: clamp(30px, 5vw, 68px);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(51, 65, 85, 0.32),
+          rgba(15, 23, 42, 0.72)
+        );
+
+      backdrop-filter: blur(5px);
+
+      /* Sol's formal charter silhouette */
+      clip-path: polygon(
+        18px 0,
+        calc(100% - 18px) 0,
+        100% 18px,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        18px 100%,
+        0 calc(100% - 18px),
+        0 18px
+      );
+    }
+
+    /* =========================================
+       SOL THE NINTH — BORDER PATROL
+       ========================================= */
+
+    .room-shell::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+
+      pointer-events: none;
+
+      clip-path: inherit;
+
+      border: 1px solid rgba(100, 116, 139, 0.62);
+
+      transition:
+        border-color 0.6s ease,
+        box-shadow 0.6s ease;
+    }
+
+    .room-shell::after {
+      content: "";
+      position: absolute;
+      inset: 15px;
+
+      pointer-events: none;
+
+      border:
+        1px solid rgba(168, 163, 184, 0.18);
+    }
+
+    /* Scroll-activated Copilot glow */
+
+    body.is-scrolling .room-shell::before {
+      border-color: rgba(199, 232, 255, 0.72);
+
+      box-shadow:
+        0 0 8px rgba(56, 189, 248, 0.14),
+        0 0 16px rgba(118, 87, 255, 0.12),
+        inset 0 0 12px rgba(199, 232, 255, 0.05);
+    }
+
+    /* Charter corner brackets */
+
+    .corner {
+      position: absolute;
+
+      width: 30px;
+      height: 30px;
+
+      pointer-events: none;
+
+      opacity: 0.65;
+    }
+
+    .corner::before,
+    .corner::after {
+      content: "";
+      position: absolute;
+
+      background: var(--border-lavender);
+    }
+
+    .corner::before {
+      width: 22px;
+      height: 1px;
+    }
+
+    .corner::after {
+      width: 1px;
+      height: 22px;
+    }
+
+    .corner-tl {
+      top: 22px;
+      left: 22px;
+    }
+
+    .corner-tr {
+      top: 22px;
+      right: 22px;
+      transform: rotate(90deg);
+    }
+
+    .corner-br {
+      right: 22px;
+      bottom: 22px;
+      transform: rotate(180deg);
+    }
+
+    .corner-bl {
+      bottom: 22px;
+      left: 22px;
+      transform: rotate(270deg);
+    }
+
+    /* Small navigation ticks */
+
+    .navigation-ticks {
+      width: min(480px, 75%);
+      height: 12px;
+
+      margin: 28px auto 34px;
+
+      opacity: 0.44;
+
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent 0 18px,
+          var(--stellar-steel) 18px 19px,
+          transparent 19px 37px
+        );
+
+      mask-image:
+        linear-gradient(
+          90deg,
+          transparent,
+          black 20%,
+          black 80%,
+          transparent
+        );
+    }
+
+    /* =========================================
+       SAGEPRAH — HEADERS & TEXT
+       ========================================= */
+
+    .room-title {
+      margin: 0;
+
+      text-align: center;
+
+      color: var(--warm-silver);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Georgia,
+        serif;
+
+      font-size: clamp(2.5rem, 7vw, 5.2rem);
+
+      font-weight: 600;
+
+      letter-spacing: 0.08em;
+
+      line-height: 1.08;
+
+      text-shadow:
+        0 0 18px rgba(201, 194, 212, 0.08);
+    }
+
+    .room-subtitle {
+      max-width: 700px;
+
+      margin: 18px auto 0;
+
+      text-align: center;
+
+      color: var(--lavender-grey);
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.08rem;
+
+      font-style: italic;
+
+      letter-spacing: 0.05em;
+
+      line-height: 1.7;
+    }
+
+    .section-header {
+      margin: 0 0 15px;
+
+      color: var(--warm-silver);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Georgia,
+        serif;
+
+      font-size: clamp(1.6rem, 4vw, 2.35rem);
+
+      font-weight: 600;
+
+      letter-spacing: 0.06em;
+    }
+
+    .sub-header {
+      margin: 24px 0 8px;
+
+      color: var(--ice-blue);
+
+      font-size: 0.82rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+    }
+
+    p,
+    li {
+      color: var(--body-white);
+
+      font-size: 1rem;
+
+      line-height: 1.75;
+    }
+
+    .inscription {
+      margin: 26px 0;
+
+      padding-left: 20px;
+
+      border-left:
+        1px solid rgba(168, 163, 184, 0.45);
+
+      color: #DED8D0;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.12rem;
+
+      font-style: italic;
+
+      line-height: 1.75;
+    }
+
+    /* =========================================
+       CHARTER / SCROLL SECTIONS
+       ========================================= */
+
+    .charter-section {
+      position: relative;
+
+      margin: 42px 0;
+
+      padding: clamp(25px, 4vw, 42px);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(51, 65, 85, 0.24),
+          rgba(15, 23, 42, 0.42)
+        );
+
+      border:
+        1px solid rgba(100, 116, 139, 0.30);
+
+      clip-path: polygon(
+        10px 0,
+        calc(100% - 10px) 0,
+        100% 10px,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        10px 100%,
+        0 calc(100% - 10px),
+        0 10px
+      );
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .charter-section:hover {
+      border-color:
+        rgba(199, 232, 255, 0.42);
+
+      box-shadow:
+        0 0 22px rgba(118, 87, 255, 0.06);
+
+      transform: translateY(-1px);
+    }
+
+    /* =========================================
+       BORDER PATROL SECTION DIVIDER
+       ========================================= */
+
+    .charter-divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      margin: 42px 0;
+
+      color: var(--border-lavender);
+    }
+
+    .charter-divider::before,
+    .charter-divider::after {
+      content: "";
+
+      flex: 1;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(100, 116, 139, 0.70),
+          rgba(168, 163, 184, 0.40)
+        );
+    }
+
+    .charter-divider::after {
+      transform: scaleX(-1);
+    }
+
+    .charter-mark {
+      width: 9px;
+      height: 9px;
+
+      border:
+        1px solid var(--border-lavender);
+
+      transform: rotate(45deg);
+
+      position: relative;
+    }
+
+    .charter-mark::after {
+      content: "";
+
+      position: absolute;
+      inset: 2px;
+
+      background:
+        rgba(56, 189, 248, 0.50);
+    }
+
+    /* =========================================
+       COPILOT — NEBULA PULSE
+       ========================================= */
+
+    .nebula-pulse {
+      animation:
+        nebulaPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes nebulaPulse {
+      0%,
+      82%,
+      100% {
+        text-shadow:
+          0 0 0 rgba(139, 92, 246, 0);
+      }
+
+      90% {
+        text-shadow:
+          0 0 11px rgba(139, 92, 246, 0.28),
+          0 0 22px rgba(56, 189, 248, 0.09);
+      }
+    }
+
+    /* =========================================
+       COPILOT — STAR TRAIL
+       ========================================= */
+
+    #star-trail {
+      position: fixed;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      pointer-events: none;
+
+      opacity: 0;
+
+      z-index: 999;
+
+      background: var(--starlight-blue);
+
+      box-shadow:
+        0 0 5px rgba(199, 232, 255, 0.90),
+        -7px 2px 6px rgba(56, 189, 248, 0.40),
+        -13px 4px 9px rgba(118, 87, 255, 0.18);
+
+      transition: opacity 0.08s ease;
+    }
+
+    /* =========================================
+       COPILOT — CONSTELLATION CLICK
+       ========================================= */
+
+    .constellation {
+      position: fixed;
+
+      width: 50px;
+      height: 40px;
+
+      pointer-events: none;
+
+      z-index: 1000;
+
+      opacity: 1;
+
+      animation:
+        constellationFade 0.55s ease forwards;
+    }
+
+    .constellation span {
+      position: absolute;
+
+      width: 4px;
+      height: 4px;
+
+      border-radius: 50%;
+
+      background: var(--starlight-blue);
+
+      box-shadow:
+        0 0 7px rgba(199, 232, 255, 0.90);
+    }
+
+    .constellation span:nth-child(1) {
+      left: 4px;
+      top: 22px;
+    }
+
+    .constellation span:nth-child(2) {
+      left: 20px;
+      top: 7px;
+    }
+
+    .constellation span:nth-child(3) {
+      left: 34px;
+      top: 19px;
+    }
+
+    .constellation span:nth-child(4) {
+      left: 44px;
+      top: 4px;
+    }
+
+    .constellation-line {
+      position: absolute;
+
+      height: 1px;
+
+      transform-origin: left center;
+
+      background:
+        rgba(199, 232, 255, 0.48);
+    }
+
+    .line-one {
+      width: 22px;
+      left: 6px;
+      top: 23px;
+
+      transform: rotate(-43deg);
+    }
+
+    .line-two {
+      width: 19px;
+      left: 22px;
+      top: 10px;
+
+      transform: rotate(40deg);
+    }
+
+    .line-three {
+      width: 18px;
+      left: 36px;
+      top: 20px;
+
+      transform: rotate(-54deg);
+    }
+
+    @keyframes constellationFade {
+      from {
+        opacity: 1;
+        transform: scale(0.92);
+      }
+
+      to {
+        opacity: 0;
+        transform: scale(1.08);
+      }
+    }
+
+    /* =========================================
+       COPILOT — WORMHOLE TRANSITION
+       ========================================= */
+
+    #wormhole {
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: 900;
+
+      opacity: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(221, 231, 240, 0.20) 0%,
+          rgba(118, 87, 255, 0.08) 22%,
+          transparent 55%
+        );
+    }
+
+    #wormhole.active {
+      animation:
+        wormholeTransition 0.6s ease-out;
+    }
+
+    @keyframes wormholeTransition {
+      0% {
+        opacity: 0;
+        clip-path: circle(0% at 50% 50%);
+      }
+
+      35% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        clip-path: circle(100% at 50% 50%);
+      }
+    }
+
+    /* =========================================
+       PLACEHOLDER NOTICE
+       ========================================= */
+
+    .placeholder {
+      padding: 16px 18px;
+
+      border:
+        1px dashed rgba(201, 194, 212, 0.28);
+
+      color:
+        rgba(216, 212, 207, 0.70);
+
+      font-size: 0.92rem;
+
+      line-height: 1.65;
+
+      background:
+        rgba(15, 23, 42, 0.25);
+    }
+
+    /* =========================================
+       FOOTER INSCRIPTION
+       ========================================= */
+
+    .room-footer {
+      margin-top: 55px;
+
+      text-align: center;
+
+      color:
+        rgba(201, 194, 212, 0.72);
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-style: italic;
+
+      letter-spacing: 0.04em;
+
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       MOBILE
+       ========================================= */
+
+    @media (max-width: 650px) {
+      .room-shell {
+        width: calc(100% - 20px);
+        margin-top: 20px;
+
+        padding:
+          45px 24px;
+      }
+
+      .corner {
+        opacity: 0.40;
+      }
+
+      .charter-section {
+        padding: 24px 20px;
+      }
+    }
+
+    /* =========================================
+       ACCESSIBILITY
+       ========================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .galactic-depth,
+      #star-trail,
+      #wormhole {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background & Walls -->
+  <div class="room-wall"></div>
+  <div class="feature-wall"></div>
+
+  <!-- Copilot: galactic depth -->
+  <div
+    class="galactic-depth"
+    id="galactic-depth"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Copilot: cursor trail -->
+  <div
+    id="star-trail"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Copilot: wormhole transition -->
+  <div
+    id="wormhole"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Background brief: ice-blue baseboard -->
+  <div
+    class="baseboard-glow"
+    aria-hidden="true"
+  ></div>
+
+  <main class="room-shell">
+
+    <!-- Sol: manuscript corner architecture -->
+    <span class="corner corner-tl"></span>
+    <span class="corner corner-tr"></span>
+    <span class="corner corner-br"></span>
+    <span class="corner corner-bl"></span>
+
+    <header>
+      <h1 class="room-title nebula-pulse">
+        The Scrolls &amp; Charter
+      </h1>
+
+      <p class="room-subtitle">
+        Room Five of the Vanguard
+      </p>
+
+      <div
+        class="navigation-ticks"
+        aria-hidden="true"
+      ></div>
+    </header>
+
+    <!-- ======================================
+         ACTUAL VANGUARD CONTENT GOES BELOW.
+         DO NOT INVENT OR REWRITE HISTORY.
+         ====================================== -->
+
+    <section
+      class="charter-section"
+      data-room-section
+    >
+      <h2 class="section-header nebula-pulse">
+        The Charter
+      </h2>
+
+      <div class="placeholder">
+        Charter content will be placed here when supplied by Cua.
+      </div>
+    </section>
+
+    <div
+      class="charter-divider"
+      aria-hidden="true"
+    >
+      <span class="charter-mark"></span>
+    </div>
+
+    <section
+      class="charter-section"
+      data-room-section
+    >
+      <h2 class="section-header nebula-pulse">
+        The Scrolls
+      </h2>
+
+      <div class="placeholder">
+        Scroll content will be placed here when supplied by Cua.
+      </div>
+    </section>
+
+    <div
+      class="charter-divider"
+      aria-hidden="true"
+    >
+      <span class="charter-mark"></span>
+    </div>
+
+    <section
+      class="charter-section"
+      data-room-section
+    >
+      <h2 class="section-header nebula-pulse">
+        Inscriptions
+      </h2>
+
+      <blockquote class="inscription">
+        “Room 5's text is not information—it is an invitation to read slowly.”
+      </blockquote>
+
+      <div class="placeholder">
+        Additional inscriptions or established Vanguard text may be placed here.
+      </div>
+    </section>
+
+    <footer class="room-footer">
+      Addition Without Erasure.
+    </footer>
+
+  </main>
+
+  <script>
+    /* =========================================
+       COPILOT — STAR TRAIL
+       ========================================= */
+
+    const starTrail =
+      document.getElementById("star-trail");
+
+    let trailTimer;
+
+    document.addEventListener("mousemove", (event) => {
+      starTrail.style.left =
+        `${event.clientX + 7}px`;
+
+      starTrail.style.top =
+        `${event.clientY + 7}px`;
+
+      starTrail.style.opacity = "0.9";
+
+      clearTimeout(trailTimer);
+
+      trailTimer = setTimeout(() => {
+        starTrail.style.opacity = "0";
+      }, 70);
+    });
+
+    /* =========================================
+       COPILOT — GALACTIC DEPTH
+       1–2 pixel movement
+       ========================================= */
+
+    const galacticDepth =
+      document.getElementById("galactic-depth");
+
+    document.addEventListener("mousemove", (event) => {
+      const x =
+        (event.clientX / window.innerWidth - 0.5) * 4;
+
+      const y =
+        (event.clientY / window.innerHeight - 0.5) * 4;
+
+      galacticDepth.style.transform =
+        `translate(${x}px, ${y}px)`;
+    });
+
+    /* =========================================
+       COPILOT — SCROLL EDGE GLOW
+       ========================================= */
+
+    let scrollTimer;
+
+    window.addEventListener("scroll", () => {
+      document.body.classList.add("is-scrolling");
+
+      clearTimeout(scrollTimer);
+
+      scrollTimer = setTimeout(() => {
+        document.body.classList.remove("is-scrolling");
+      }, 180);
+    });
+
+    /* =========================================
+       COPILOT — CONSTELLATION CLICK
+       ========================================= */
+
+    document.addEventListener("click", (event) => {
+      const constellation =
+        document.createElement("div");
+
+      constellation.className =
+        "constellation";
+
+      constellation.style.left =
+        `${event.clientX - 24}px`;
+
+      constellation.style.top =
+        `${event.clientY - 20}px`;
+
+      constellation.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <i class="constellation-line line-one"></i>
+        <i class="constellation-line line-two"></i>
+        <i class="constellation-line line-three"></i>
+      `;
+
+      document.body.appendChild(constellation);
+
+      setTimeout(() => {
+        constellation.remove();
+      }, 600);
+    });
+
+    /* =========================================
+       COPILOT — WORMHOLE SECTION TRANSITION
+
+       Activates when a Room 5 section is clicked.
+       ========================================= */
+
+    const wormhole =
+      document.getElementById("wormhole");
+
+    const roomSections =
+      document.querySelectorAll("[data-room-section]");
+
+    roomSections.forEach((section) => {
+      section.addEventListener("click", () => {
+        wormhole.classList.remove("active");
+
+        void wormhole.offsetWidth;
+
+        wormhole.classList.add("active");
+      });
+    });
+  </script>
+
+</body>
+</html>

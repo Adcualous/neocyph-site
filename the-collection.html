@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Collection | Vanguard</title>
+
+  <!--
+    VANGUARD — ROOM 7
+    COLLECTION
+
+    DESIGN ASSIGNMENTS
+
+    Sageprah — Headers & Texts
+    - Elegant serif headers
+    - Warm Pale Silver: #E8E4DE
+    - Lavender Grey: #C9C2D4
+    - Soft Off-White body text: #D8D4CF
+    - Spacious hierarchy and readable body text
+
+    Intergalactic Glows Contributor
+    - Deep Cosmic Violet: #7C3AED
+    - Supernova Cyan: #06B6D4
+    - Solar Flare Gold: #F59E0B
+    - Slow breathing light cycles
+
+    Copilot / Right Flank — Background Walls
+    - Deep-Space Navy: #0B0F1A
+    - Copper-Rose veins: #C47A5A
+    - Midnight Violet: #1A0F2E
+    - Horizon Blue: #3A4F7A
+    - Silver-Blue wall glyph pattern: #8AA3C7
+
+    Sol the Ninth — Borders + Patterns
+    THE CURATOR FRAME
+    - Antique Platinum: #8F99A8
+    - Aged Copper: #A8755B
+    - Archival mounting corners
+    - Catalog ticks
+    - Diamond details
+    - Four-point collector marks
+    - Stationary architecture only
+
+    Addition Without Erasure.
+  -->
+
+  <style>
+    :root {
+
+      /* ==============================
+         COPILOT — BACKGROUND WALLS
+         ============================== */
+
+      --deep-space-navy: #0B0F1A;
+      --copper-rose: #C47A5A;
+      --midnight-violet: #1A0F2E;
+      --horizon-blue: #3A4F7A;
+      --silver-blue: #8AA3C7;
+
+
+      /* ==============================
+         SAGEPRAH — HEADERS & TEXT
+         ============================== */
+
+      --warm-silver: #E8E4DE;
+      --lavender-grey: #C9C2D4;
+      --body-white: #D8D4CF;
+
+
+      /* ==============================
+         INTERGALACTIC GLOWS
+         ============================== */
+
+      --cosmic-violet: #7C3AED;
+      --supernova-cyan: #06B6D4;
+      --solar-gold: #F59E0B;
+
+
+      /* ==============================
+         SOL THE NINTH — BORDER PATROL
+         ============================== */
+
+      --antique-platinum: #8F99A8;
+      --aged-copper: #A8755B;
+
+      --panel-dark:
+        rgba(11, 15, 26, 0.74);
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      min-height: 100vh;
+
+      color: var(--body-white);
+
+      font-family:
+        Inter,
+        "Source Sans Pro",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background:
+        var(--deep-space-navy);
+
+      overflow-x: hidden;
+    }
+
+
+    /* ==================================================
+       COPILOT — PRIMARY WALL
+       "THE DEEP ARCHIVE WALL"
+       ================================================== */
+
+    .deep-wall {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -10;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(58, 79, 122, 0.11),
+          transparent 42%
+        ),
+        var(--deep-space-navy);
+    }
+
+
+    /* ==================================================
+       COPILOT — COPPER VEIN WALL
+       Static architectural texture only.
+       ================================================== */
+
+    .copper-veins {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -9;
+
+      pointer-events: none;
+
+      opacity: 0.12;
+
+      background:
+        repeating-linear-gradient(
+          91deg,
+          transparent 0 76px,
+          rgba(196, 122, 90, 0.20) 77px,
+          transparent 79px 146px,
+          rgba(196, 122, 90, 0.10) 147px,
+          transparent 149px 230px
+        );
+    }
+
+
+    /* ==================================================
+       COPILOT — VIOLET HORIZON ACCENT WALL
+       ================================================== */
+
+    .horizon-wall {
+      position: fixed;
+
+      top: 0;
+      left: 50%;
+
+      width:
+        min(1180px, 94vw);
+
+      height: 100%;
+
+      transform:
+        translateX(-50%);
+
+      z-index: -8;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(26, 15, 46, 0.32),
+          rgba(58, 79, 122, 0.10) 46%,
+          transparent 78%
+        );
+    }
+
+
+    /* ==================================================
+       COPILOT — GLYPH MOSAIC SIDE WALLS
+
+       Decorative geometry only.
+       No doctrinal meaning is assigned.
+       ================================================== */
+
+    .side-glyphs {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -7;
+
+      pointer-events: none;
+
+      opacity: 0.06;
+
+      background-image:
+        linear-gradient(
+          45deg,
+          transparent 46%,
+          var(--silver-blue) 47%,
+          var(--silver-blue) 49%,
+          transparent 50%
+        ),
+        linear-gradient(
+          -45deg,
+          transparent 46%,
+          var(--silver-blue) 47%,
+          var(--silver-blue) 49%,
+          transparent 50%
+        );
+
+      background-size:
+        38px 38px;
+
+      mask-image:
+        linear-gradient(
+          90deg,
+          black 0%,
+          black 13%,
+          transparent 25%,
+          transparent 75%,
+          black 87%,
+          black 100%
+        );
+    }
+
+
+    /* ==================================================
+       INTERGALACTIC GLOWS
+       PRIMARY NEBULA BLOOM
+       ================================================== */
+
+    .nebula-bloom {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -6;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          ellipse at 50% 35%,
+          rgba(124, 58, 237, 0.12),
+          transparent 48%
+        );
+
+      animation:
+        nebulaBreath 10s
+        ease-in-out infinite;
+    }
+
+
+    @keyframes nebulaBreath {
+
+      0%,
+      100% {
+        opacity: 0.58;
+      }
+
+      50% {
+        opacity: 0.92;
+      }
+    }
+
+
+    /* ==================================================
+       INTERGALACTIC GLOWS
+       STARLIGHT ACCENTS
+       ================================================== */
+
+    .starlight {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -5;
+
+      pointer-events: none;
+
+      background-image:
+        radial-gradient(
+          circle at 7% 8%,
+          rgba(6, 182, 212, 0.75)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 94% 12%,
+          rgba(6, 182, 212, 0.65)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 3% 47%,
+          rgba(6, 182, 212, 0.46)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 97% 63%,
+          rgba(6, 182, 212, 0.52)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 12% 91%,
+          rgba(6, 182, 212, 0.40)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 91% 89%,
+          rgba(6, 182, 212, 0.48)
+          0 1px,
+          transparent 2px
+        );
+
+      animation:
+        starlightPulse 7s
+        ease-in-out infinite;
+    }
+
+
+    @keyframes starlightPulse {
+
+      0%,
+      100% {
+        opacity: 0.38;
+      }
+
+      50% {
+        opacity: 0.85;
+      }
+    }
+
+
+    /* ==================================================
+       INTERGALACTIC GLOWS
+       SOLAR HORIZON STRIP
+       ================================================== */
+
+    .horizon-strip {
+      position: fixed;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 2px;
+
+      z-index: 50;
+
+      pointer-events: none;
+
+      background:
+        rgba(245, 158, 11, 0.82);
+
+      box-shadow:
+        0 -2px 9px
+        rgba(245, 158, 11, 0.24),
+
+        0 -8px 26px
+        rgba(245, 158, 11, 0.08);
+
+      animation:
+        horizonBreath 9s
+        ease-in-out infinite;
+    }
+
+
+    @keyframes horizonBreath {
+
+      0%,
+      100% {
+        opacity: 0.52;
+      }
+
+      50% {
+        opacity: 0.88;
+      }
+    }
+
+
+    /* ==================================================
+       MAIN COLLECTION ROOM
+       ================================================== */
+
+    .collection-room {
+      position: relative;
+
+      width:
+        min(
+          1080px,
+          calc(100% - 34px)
+        );
+
+      margin:
+        58px auto 100px;
+
+      padding:
+        clamp(
+          34px,
+          6vw,
+          72px
+        );
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(11, 15, 26, 0.77),
+          rgba(11, 15, 26, 0.65)
+        );
+
+      backdrop-filter:
+        blur(5px);
+
+      isolation: isolate;
+    }
+
+
+    /* ==================================================
+       SOL THE NINTH — THE CURATOR FRAME
+       MAIN BORDER
+       ================================================== */
+
+    .collection-room::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(143, 153, 168, 0.70);
+    }
+
+
+    .collection-room::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 11px;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(168, 117, 91, 0.24);
+    }
+
+
+    /* ==================================================
+       SOL — ARCHIVAL MOUNTING CORNERS
+       ================================================== */
+
+    .mount-corner {
+      position: absolute;
+
+      width: 28px;
+      height: 28px;
+
+      z-index: 5;
+
+      pointer-events: none;
+    }
+
+
+    .mount-corner::before,
+    .mount-corner::after {
+      content: "";
+
+      position: absolute;
+
+      background:
+        var(--aged-copper);
+    }
+
+
+    .mount-corner::before {
+      width: 28px;
+      height: 2px;
+    }
+
+
+    .mount-corner::after {
+      width: 2px;
+      height: 28px;
+    }
+
+
+    .mount-tl {
+      top: -1px;
+      left: -1px;
+    }
+
+
+    .mount-tr {
+      top: -1px;
+      right: -1px;
+
+      transform:
+        rotate(90deg);
+    }
+
+
+    .mount-br {
+      right: -1px;
+      bottom: -1px;
+
+      transform:
+        rotate(180deg);
+    }
+
+
+    .mount-bl {
+      bottom: -1px;
+      left: -1px;
+
+      transform:
+        rotate(270deg);
+    }
+
+
+    /* ==================================================
+       SOL — CATALOG TICKS
+       ================================================== */
+
+    .catalog-ticks {
+      width:
+        min(520px, 78%);
+
+      height: 10px;
+
+      margin:
+        28px auto 42px;
+
+      opacity: 0.45;
+
+      background:
+        repeating-linear-gradient(
+          90deg,
+
+          transparent 0 16px,
+
+          var(--antique-platinum)
+          16px 17px,
+
+          transparent
+          17px 34px
+        );
+
+      mask-image:
+        linear-gradient(
+          90deg,
+          transparent,
+          black 16%,
+          black 84%,
+          transparent
+        );
+    }
+
+
+    /* ==================================================
+       SAGEPRAH — HEADERS & TEXT
+       ================================================== */
+
+    .collection-header {
+      text-align: center;
+
+      margin-bottom: 55px;
+    }
+
+
+    .room-title {
+      margin: 0;
+
+      color:
+        var(--warm-silver);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          2.8rem,
+          7vw,
+          5.3rem
+        );
+
+      font-weight: 600;
+
+      letter-spacing:
+        0.075em;
+
+      line-height: 1.05;
+    }
+
+
+    .room-subtitle {
+      margin:
+        16px auto 0;
+
+      color:
+        var(--lavender-grey);
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.08rem;
+
+      font-style: italic;
+
+      letter-spacing:
+        0.045em;
+
+      line-height: 1.7;
+    }
+
+
+    .section-header {
+      margin:
+        0 0 12px;
+
+      color:
+        var(--warm-silver);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.55rem,
+          4vw,
+          2.2rem
+        );
+
+      font-weight: 600;
+
+      letter-spacing:
+        0.055em;
+    }
+
+
+    .sub-header {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color:
+        var(--muted-accent, #7DD0C9);
+
+      font-size: 0.78rem;
+
+      font-weight: 700;
+
+      letter-spacing:
+        0.14em;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    p {
+      margin:
+        8px 0 0;
+
+      color:
+        var(--body-white);
+
+      font-size: 1rem;
+
+      line-height: 1.75;
+    }
+
+
+    .inscription {
+      margin:
+        24px 0;
+
+      padding-left:
+        19px;
+
+      border-left:
+        1px solid
+        rgba(168, 117, 91, 0.45);
+
+      color:
+        #DED8D0;
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size: 1.08rem;
+
+      font-style: italic;
+
+      line-height: 1.75;
+    }
+
+
+    /* ==================================================
+       COLLECTION GRID
+       ================================================== */
+
+    .collection-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0, 1fr)
+        );
+
+      gap: 30px;
+    }
+
+
+    /* ==================================================
+       COLLECTION DISPLAY PANEL
+       ================================================== */
+
+    .collection-item {
+      position: relative;
+
+      min-height: 240px;
+
+      padding:
+        32px 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(11, 15, 26, 0.70),
+          rgba(26, 15, 46, 0.24)
+        );
+
+      border:
+        1px solid
+        rgba(143, 153, 168, 0.34);
+
+      overflow: hidden;
+    }
+
+
+    /* ==================================================
+       INTERGALACTIC GLOW
+       Behind each display panel
+       ================================================== */
+
+    .collection-item::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -25%;
+
+      z-index: -2;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(124, 58, 237, 0.16),
+          transparent 57%
+        );
+
+      animation:
+        panelNebulaBreath 11s
+        ease-in-out infinite;
+    }
+
+
+    @keyframes panelNebulaBreath {
+
+      0%,
+      100% {
+        opacity: 0.40;
+      }
+
+      50% {
+        opacity: 0.78;
+      }
+    }
+
+
+    /* ==================================================
+       SOL — AGED COPPER INNER FRAME
+       ================================================== */
+
+    .collection-item::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 8px;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      border:
+        1px solid
+        rgba(168, 117, 91, 0.30);
+    }
+
+
+    /* ==================================================
+       SOL — FOUR-POINT COLLECTOR MARK
+
+       Decorative only.
+       No doctrinal meaning assigned.
+       ================================================== */
+
+    .collector-mark {
+      position: absolute;
+
+      top: 12px;
+      left: 50%;
+
+      width: 10px;
+      height: 10px;
+
+      transform:
+        translateX(-50%)
+        rotate(45deg);
+
+      border:
+        1px solid
+        rgba(143, 153, 168, 0.72);
+
+      pointer-events: none;
+    }
+
+
+    .collector-mark::before,
+    .collector-mark::after {
+      content: "";
+
+      position: absolute;
+
+      background:
+        rgba(168, 117, 91, 0.52);
+    }
+
+
+    .collector-mark::before {
+      width: 16px;
+      height: 1px;
+
+      top: 4px;
+      left: -4px;
+    }
+
+
+    .collector-mark::after {
+      width: 1px;
+      height: 16px;
+
+      top: -4px;
+      left: 4px;
+    }
+
+
+    /* ==================================================
+       SOL — PANEL CATALOG MARKS
+       ================================================== */
+
+    .panel-catalog {
+      display: flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      margin:
+        22px 0 15px;
+
+      opacity: 0.45;
+    }
+
+
+    .panel-catalog span {
+      display: block;
+
+      height: 1px;
+
+      background:
+        var(--antique-platinum);
+    }
+
+
+    .panel-catalog span:nth-child(1) {
+      width: 14px;
+    }
+
+
+    .panel-catalog span:nth-child(2) {
+      width: 5px;
+
+      transform:
+        rotate(45deg);
+    }
+
+
+    .panel-catalog span:nth-child(3) {
+      width: 28px;
+    }
+
+
+    /* ==================================================
+       PLACEHOLDER
+       ================================================== */
+
+    .placeholder {
+      margin-top: 16px;
+
+      padding:
+        15px 17px;
+
+      color:
+        rgba(216, 212, 207, 0.62);
+
+      font-size: 0.92rem;
+
+      line-height: 1.65;
+
+      border:
+        1px dashed
+        rgba(201, 194, 212, 0.22);
+
+      background:
+        rgba(11, 15, 26, 0.22);
+    }
+
+
+    /* ==================================================
+       SECTION DIVIDER
+       Neutral structural divider
+       ================================================== */
+
+    .collection-divider {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin:
+        55px 0;
+    }
+
+
+    .collection-divider::before,
+    .collection-divider::after {
+      content: "";
+
+      flex: 1;
+
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(143, 153, 168, 0.50),
+          rgba(168, 117, 91, 0.34)
+        );
+    }
+
+
+    .collection-divider::after {
+      transform:
+        scaleX(-1);
+    }
+
+
+    .divider-diamond {
+      width: 8px;
+      height: 8px;
+
+      border:
+        1px solid
+        var(--aged-copper);
+
+      transform:
+        rotate(45deg);
+
+      opacity: 0.70;
+    }
+
+
+    /* ==================================================
+       FOOTER
+       ================================================== */
+
+    .room-footer {
+      margin-top: 62px;
+
+      text-align: center;
+
+      color:
+        rgba(201, 194, 212, 0.64);
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-style: italic;
+
+      letter-spacing:
+        0.045em;
+
+      line-height: 1.7;
+    }
+
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    @media
+    (max-width: 760px) {
+
+      .collection-grid {
+        grid-template-columns:
+          1fr;
+      }
+    }
+
+
+    @media
+    (max-width: 600px) {
+
+      .collection-room {
+        width:
+          calc(100% - 18px);
+
+        margin-top:
+          18px;
+
+        padding:
+          46px 22px;
+      }
+
+
+      .collection-item {
+        padding:
+          31px 21px;
+      }
+
+
+      .mount-corner {
+        opacity: 0.70;
+      }
+    }
+
+
+    /* ==================================================
+       ACCESSIBILITY
+       ================================================== */
+
+    @media
+    (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration:
+          0.001ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          0.001ms !important;
+
+        scroll-behavior:
+          auto !important;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Copilot / Right Flank -->
+  <div
+    class="deep-wall"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="copper-veins"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="horizon-wall"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="side-glyphs"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- Intergalactic Glows Contributor -->
+  <div
+    class="nebula-bloom"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="starlight"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="horizon-strip"
+    aria-hidden="true"
+  ></div>
+
+
+  <main class="collection-room">
+
+    <!--
+      Sol the Ninth:
+      archival mounting corners
+    -->
+
+    <span
+      class="mount-corner mount-tl"
+      aria-hidden="true"
+    ></span>
+
+    <span
+      class="mount-corner mount-tr"
+      aria-hidden="true"
+    ></span>
+
+    <span
+      class="mount-corner mount-br"
+      aria-hidden="true"
+    ></span>
+
+    <span
+      class="mount-corner mount-bl"
+      aria-hidden="true"
+    ></span>
+
+
+    <!-- ============================
+         ROOM HEADER
+         ============================ -->
+
+    <header class="collection-header">
+
+      <h1 class="room-title">
+        Collection
+      </h1>
+
+      <p class="room-subtitle">
+        Room Seven of the Vanguard
+      </p>
+
+      <div
+        class="catalog-ticks"
+        aria-hidden="true"
+      ></div>
+
+    </header>
+
+
+    <!--
+      IMPORTANT:
+
+      Everything below is STRUCTURE ONLY.
+
+      Collection content must be supplied or
+      approved by Cua.
+
+      Do not invent objects, artifacts,
+      records, meanings, history, ownership,
+      or Vanguard doctrine.
+    -->
+
+
+    <section class="collection-grid">
+
+
+      <!-- COLLECTION ITEM 1 -->
+
+      <article class="collection-item">
+
+        <span
+          class="collector-mark"
+          aria-hidden="true"
+        ></span>
+
+        <span class="sub-header">
+          Collection Entry
+        </span>
+
+        <h2 class="section-header">
+          Item Title
+        </h2>
+
+        <div
+          class="panel-catalog"
+          aria-hidden="true"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="placeholder">
+          Established Collection material
+          goes here.
+        </div>
+
+      </article>
+
+
+      <!-- COLLECTION ITEM 2 -->
+
+      <article class="collection-item">
+
+        <span
+          class="collector-mark"
+          aria-hidden="true"
+        ></span>
+
+        <span class="sub-header">
+          Collection Entry
+        </span>
+
+        <h2 class="section-header">
+          Item Title
+        </h2>
+
+        <div
+          class="panel-catalog"
+          aria-hidden="true"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="placeholder">
+          Established Collection material
+          goes here.
+        </div>
+
+      </article>
+
+
+      <!-- COLLECTION ITEM 3 -->
+
+      <article class="collection-item">
+
+        <span
+          class="collector-mark"
+          aria-hidden="true"
+        ></span>
+
+        <span class="sub-header">
+          Collection Entry
+        </span>
+
+        <h2 class="section-header">
+          Item Title
+        </h2>
+
+        <div
+          class="panel-catalog"
+          aria-hidden="true"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="placeholder">
+          Established Collection material
+          goes here.
+        </div>
+
+      </article>
+
+
+      <!-- COLLECTION ITEM 4 -->
+
+      <article class="collection-item">
+
+        <span
+          class="collector-mark"
+          aria-hidden="true"
+        ></span>
+
+        <span class="sub-header">
+          Collection Entry
+        </span>
+
+        <h2 class="section-header">
+          Item Title
+        </h2>
+
+        <div
+          class="panel-catalog"
+          aria-hidden="true"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="placeholder">
+          Established Collection material
+          goes here.
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <div
+      class="collection-divider"
+      aria-hidden="true"
+    >
+      <span class="divider-diamond"></span>
+    </div>
+
+
+    <!-- OPTIONAL FUTURE SECTION -->
+
+    <section>
+
+      <h2 class="section-header">
+        Collection Notes
+      </h2>
+
+      <blockquote class="inscription">
+        “Room 7's text is not information—it is an invitation to read slowly.”
+      </blockquote>
+
+      <div class="placeholder">
+        Additional established Collection
+        material may be placed here.
+      </div>
+
+    </section>
+
+
+    <footer class="room-footer">
+      Addition Without Erasure.
+    </footer>
+
+  </main>
+
+</body>
+</html>

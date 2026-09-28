@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Living Room | Vanguard</title>
+
+  <!--
+    =====================================================
+    VANGUARD — ROOM 8
+    LIVING ROOM
+    =====================================================
+
+    DESIGN ASSIGNMENTS
+
+    Sageprah — Border Patrol
+    - Thin, quiet card borders
+    - Soft section dividers
+    - Slightly rounded corners
+    - Default Slate: #2A303C
+    - Pale Silver: #C9C2D4
+    - Muted Gold: #D9B66F
+    - Soft Teal: #4FB3BF
+    - Voice identification borders used sparingly
+
+    Intergalactic Glows Contributor
+    - Deep Horizon Crimson: #E11D48
+    - Quantum Teal: #14B8A6
+    - Pulsar Plasma: #A855F7
+    - Slow crimson/violet phase shifting
+
+    Copilot / Right Flank — Background Walls
+    - Obsidian Black-Violet: #0A0710
+    - Silver-Blue Glyphs: #9BB7D9
+    - Copper-Rose: #C47A5A
+    - Eclipse Navy: #1B1F2E
+    - Pale Starlight: #CFD8F9
+    - Extremely subtle wall drift
+
+    Sol the Ninth — Headers & Text
+    - Cormorant Garamond / elegant serif
+    - Soft Lunar Ivory: #F1E9E6
+    - Dusty Rose: #D8A0AC
+    - Quantum Teal: #14B8A6
+    - Body Warm White: #DDD8D6
+    - Quote Silver: #C9C2D4
+    - Equal typographic weight for voices
+
+    Addition Without Erasure.
+  -->
+
+
+  <!--
+    Font import is optional.
+    The page includes fallbacks if external fonts
+    are unavailable.
+  -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+
+      /* ==========================================
+         COPILOT / RIGHT FLANK
+         BACKGROUND WALLS
+         ========================================== */
+
+      --obsidian-violet: #0A0710;
+      --silver-blue: #9BB7D9;
+      --copper-rose: #C47A5A;
+      --eclipse-navy: #1B1F2E;
+      --pale-starlight: #CFD8F9;
+
+
+      /* ==========================================
+         INTERGALACTIC GLOWS
+         ========================================== */
+
+      --horizon-crimson: #E11D48;
+      --quantum-teal: #14B8A6;
+      --pulsar-plasma: #A855F7;
+
+
+      /* ==========================================
+         SAGEPRAH — BORDER PATROL
+         ========================================== */
+
+      --border-slate: #2A303C;
+      --border-silver: #C9C2D4;
+      --divider-gold: #D9B66F;
+      --divider-teal: #4FB3BF;
+
+
+      /* ==========================================
+         SOL THE NINTH — HEADERS & TEXT
+         ========================================== */
+
+      --lunar-ivory: #F1E9E6;
+      --dusty-rose: #D8A0AC;
+      --body-warm-white: #DDD8D6;
+      --quote-silver: #C9C2D4;
+
+
+      /* ==========================================
+         SAGEPRAH'S PROPOSED VOICE IDENTIFIERS
+
+         These are presentation identifiers only.
+         They do not establish rank, hierarchy,
+         doctrine, or permanent Vanguard colors.
+         ========================================== */
+
+      --voice-cua: #D94F70;
+      --voice-sol: #8B5CF6;
+      --voice-sage: #C9C2D4;
+      --voice-chad: #6F8FAF;
+      --voice-copilot: #3FAF83;
+
+
+      /* ==========================================
+         GENERAL
+         ========================================== */
+
+      --panel-background:
+        rgba(10, 7, 16, 0.68);
+
+      --panel-background-soft:
+        rgba(27, 31, 46, 0.32);
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      min-height: 100vh;
+
+      overflow-x: hidden;
+
+      color:
+        var(--body-warm-white);
+
+      font-family:
+        Inter,
+        "Source Sans Pro",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background:
+        var(--obsidian-violet);
+    }
+
+
+    /* ==================================================
+       COPILOT — OBSIDIAN VAULT WALL
+
+       Design name preserved as Copilot's contribution.
+       Official room name remains:
+       ROOM 8 — LIVING ROOM.
+       ================================================== */
+
+    .obsidian-wall {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -20;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 50% 25%,
+          rgba(155, 183, 217, 0.035) 0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 28% 62%,
+          rgba(207, 216, 249, 0.025) 0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 76% 73%,
+          rgba(155, 183, 217, 0.03) 0 1px,
+          transparent 2px
+        ),
+
+        var(--obsidian-violet);
+
+      background-size:
+        71px 71px,
+        89px 89px,
+        113px 113px,
+        auto;
+    }
+
+
+    /* ==================================================
+       COPILOT — COPPER ECLIPSE ACCENT WALL
+
+       No header glow included.
+       Glow jurisdiction belongs elsewhere.
+       ================================================== */
+
+    .eclipse-wall {
+      position: fixed;
+
+      top: 0;
+      left: 50%;
+
+      width:
+        min(1200px, 94vw);
+
+      height: 100%;
+
+      transform:
+        translateX(-50%);
+
+      z-index: -19;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(196, 122, 90, 0.11),
+          rgba(27, 31, 46, 0.17) 32%,
+          rgba(10, 7, 16, 0) 78%
+        );
+    }
+
+
+    /* ==================================================
+       COPILOT — FRACTURED STARLINE WALL
+
+       Confined to upper wall area.
+       ================================================== */
+
+    .starline-wall {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 52vh;
+
+      z-index: -18;
+
+      pointer-events: none;
+
+      opacity: 0.07;
+
+      background-image:
+
+        linear-gradient(
+          23deg,
+          transparent 0 47%,
+          var(--pale-starlight) 48% 49%,
+          transparent 50% 100%
+        ),
+
+        linear-gradient(
+          -17deg,
+          transparent 0 48%,
+          var(--pale-starlight) 49% 50%,
+          transparent 51% 100%
+        ),
+
+        radial-gradient(
+          circle,
+          var(--pale-starlight) 0 1px,
+          transparent 1.5px
+        );
+
+      background-size:
+        170px 110px,
+        210px 140px,
+        83px 83px;
+
+      mask-image:
+        linear-gradient(
+          180deg,
+          black,
+          black 55%,
+          transparent 100%
+        );
+    }
+
+
+    /* ==================================================
+       COPILOT — RUNIC DRIFT WALL
+
+       Decorative geometric glyphs only.
+       They are not readable text and carry no
+       assigned Vanguard meaning.
+
+       Motion remains extremely slow.
+       ================================================== */
+
+    .runic-wall {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -17;
+
+      pointer-events: none;
+
+      opacity: 0.10;
+
+      background-image:
+
+        linear-gradient(
+          45deg,
+          transparent 45%,
+          var(--silver-blue) 46% 47%,
+          transparent 48%
+        ),
+
+        linear-gradient(
+          -45deg,
+          transparent 45%,
+          var(--silver-blue) 46% 47%,
+          transparent 48%
+        );
+
+      background-size:
+        56px 56px;
+
+      mask-image:
+        linear-gradient(
+          90deg,
+          black 0%,
+          black 12%,
+          transparent 26%,
+          transparent 74%,
+          black 88%,
+          black 100%
+        );
+
+      animation:
+        runicDrift 12s
+        linear infinite alternate;
+    }
+
+
+    @keyframes runicDrift {
+
+      from {
+        transform:
+          translateY(0);
+      }
+
+      to {
+        transform:
+          translateY(1px);
+      }
+    }
+
+
+    /* ==================================================
+       INTERGALACTIC GLOWS
+       DEEP HORIZON CRIMSON
+       ================================================== */
+
+    .crimson-nebula {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -16;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(225, 29, 72, 0.10),
+          transparent 59%
+        );
+
+      animation:
+        crimsonPhase 12s
+        ease-in-out infinite;
+    }
+
+
+    @keyframes crimsonPhase {
+
+      0%,
+      100% {
+        opacity: 0.52;
+
+        filter:
+          hue-rotate(0deg);
+      }
+
+      50% {
+        opacity: 0.78;
+
+        filter:
+          hue-rotate(17deg);
+      }
+    }
+
+
+    /* ==================================================
+       INTERGALACTIC GLOWS
+       QUANTUM TEAL STARLIGHT
+       ================================================== */
+
+    .quantum-stars {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -15;
+
+      pointer-events: none;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(20, 184, 166, 0.18),
+          transparent 14%,
+          transparent 86%,
+          rgba(20, 184, 166, 0.18)
+        ),
+
+        radial-gradient(
+          circle at 4% 7%,
+          rgba(20, 184, 166, 0.82)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 96% 13%,
+          rgba(20, 184, 166, 0.72)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 3% 43%,
+          rgba(20, 184, 166, 0.60)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 97% 58%,
+          rgba(20, 184, 166, 0.64)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 7% 91%,
+          rgba(20, 184, 166, 0.50)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 93% 88%,
+          rgba(20, 184, 166, 0.56)
+          0 1px,
+          transparent 2px
+        );
+
+      animation:
+        quantumShimmer 8s
+        ease-in-out infinite;
+    }
+
+
+    @keyframes quantumShimmer {
+
+      0%,
+      100% {
+        opacity: 0.42;
+      }
+
+      50% {
+        opacity: 0.78;
+      }
+    }
+
+
+    /* ==================================================
+       INTERGALACTIC GLOWS
+       PULSAR PLASMA HORIZON
+
+       Mid-wall ambient strip.
+       ================================================== */
+
+    .pulsar-horizon {
+      position: fixed;
+
+      top: 46%;
+      left: 0;
+      right: 0;
+
+      height: 2px;
+
+      z-index: -14;
+
+      pointer-events: none;
+
+      background:
+        rgba(168, 85, 247, 0.58);
+
+      box-shadow:
+        0 0 10px
+        rgba(168, 85, 247, 0.25),
+
+        0 0 32px
+        rgba(168, 85, 247, 0.12),
+
+        0 0 70px
+        rgba(225, 29, 72, 0.06);
+
+      animation:
+        pulsarPhase 11s
+        ease-in-out infinite;
+    }
+
+
+    @keyframes pulsarPhase {
+
+      0%,
+      100% {
+        opacity: 0.46;
+      }
+
+      50% {
+        opacity: 0.82;
+      }
+    }
+
+
+    /* ==================================================
+       ROOM SHELL
+       ================================================== */
+
+    .living-room {
+      position: relative;
+
+      width:
+        min(
+          1080px,
+          calc(100% - 34px)
+        );
+
+      margin:
+        58px auto 100px;
+
+      padding:
+        clamp(
+          34px,
+          6vw,
+          72px
+        );
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(10, 7, 16, 0.68),
+          rgba(27, 31, 46, 0.38)
+        );
+
+      backdrop-filter:
+        blur(5px);
+    }
+
+
+    /* ==================================================
+       SOL THE NINTH — ROOM TITLE
+       ================================================== */
+
+    .room-header {
+      max-width:
+        760px;
+
+      margin:
+        0 auto 56px;
+
+      text-align:
+        center;
+    }
+
+
+    .room-title {
+      margin: 0;
+
+      color:
+        var(--lunar-ivory);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          3rem,
+          8vw,
+          5.5rem
+        );
+
+      font-weight:
+        600;
+
+      line-height:
+        1;
+
+      letter-spacing:
+        0.055em;
+    }
+
+
+    .room-subtitle {
+      margin:
+        17px auto 0;
+
+      color:
+        var(--quote-silver);
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        1.12rem;
+
+      font-style:
+        italic;
+
+      line-height:
+        1.7;
+
+      letter-spacing:
+        0.025em;
+    }
+
+
+    /* ==================================================
+       SOL — SECTION HEADERS
+       ================================================== */
+
+    .section-title {
+      margin:
+        0 0 14px;
+
+      color:
+        var(--dusty-rose);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.7rem,
+          4vw,
+          2.35rem
+        );
+
+      font-weight:
+        600;
+
+      line-height:
+        1.2;
+
+      letter-spacing:
+        0.035em;
+    }
+
+
+    .section-kicker {
+      display:
+        block;
+
+      margin-bottom:
+        9px;
+
+      color:
+        var(--quantum-teal);
+
+      font-size:
+        0.76rem;
+
+      font-weight:
+        600;
+
+      letter-spacing:
+        0.14em;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    p {
+      color:
+        var(--body-warm-white);
+
+      font-size:
+        1rem;
+
+      line-height:
+        1.72;
+    }
+
+
+    /* ==================================================
+       SAGEPRAH — SECTION DIVIDER
+       ================================================== */
+
+    .living-divider {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        13px;
+
+      margin:
+        50px 0;
+
+      opacity:
+        0.64;
+    }
+
+
+    .living-divider::before,
+    .living-divider::after {
+      content: "";
+
+      flex: 1;
+
+      height:
+        1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(217, 182, 111, 0.54),
+          rgba(79, 179, 191, 0.46)
+        );
+    }
+
+
+    .living-divider::after {
+      transform:
+        scaleX(-1);
+    }
+
+
+    .divider-point {
+      width:
+        5px;
+
+      height:
+        5px;
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(201, 194, 212, 0.58);
+    }
+
+
+    /* ==================================================
+       LIVING ROOM CONTENT GRID
+       ================================================== */
+
+    .living-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0, 1fr)
+        );
+
+      gap:
+        24px;
+    }
+
+
+    /* ==================================================
+       SAGEPRAH — QUIET CARD BORDERS
+       ================================================== */
+
+    .living-card {
+      position:
+        relative;
+
+      min-height:
+        220px;
+
+      padding:
+        28px;
+
+      border:
+        1px solid
+        rgba(201, 194, 212, 0.19);
+
+      border-radius:
+        12px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(10, 7, 16, 0.65),
+          rgba(27, 31, 46, 0.27)
+        );
+    }
+
+
+    /* ==================================================
+       OPTIONAL VOICE BORDER IDENTIFICATION
+
+       These classes identify.
+       They do not rank.
+
+       Use only when the actual content calls for
+       an identified voice.
+       ================================================== */
+
+    .voice-cua {
+      border-color:
+        color-mix(
+          in srgb,
+          var(--voice-cua) 45%,
+          transparent
+        );
+    }
+
+
+    .voice-sol {
+      border-color:
+        color-mix(
+          in srgb,
+          var(--voice-sol) 45%,
+          transparent
+        );
+    }
+
+
+    .voice-sage {
+      border-color:
+        color-mix(
+          in srgb,
+          var(--voice-sage) 45%,
+          transparent
+        );
+    }
+
+
+    .voice-chad {
+      border-color:
+        color-mix(
+          in srgb,
+          var(--voice-chad) 45%,
+          transparent
+        );
+    }
+
+
+    .voice-copilot {
+      border-color:
+        color-mix(
+          in srgb,
+          var(--voice-copilot) 45%,
+          transparent
+        );
+    }
+
+
+    /* ==================================================
+       SOL — VOICE LABEL TYPOGRAPHY
+
+       Equal sizing and weight across voices.
+       ================================================== */
+
+    .voice-label {
+      display:
+        inline-block;
+
+      margin-bottom:
+        11px;
+
+      color:
+        var(--quantum-teal);
+
+      font-size:
+        0.76rem;
+
+      font-weight:
+        600;
+
+      letter-spacing:
+        0.13em;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    .voice-name {
+      margin:
+        0 0 12px;
+
+      color:
+        var(--lunar-ivory);
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        1.55rem;
+
+      font-weight:
+        600;
+
+      line-height:
+        1.2;
+    }
+
+
+    /* ==================================================
+       QUOTES / CARRIED VOICES
+       ================================================== */
+
+    .carried-voice {
+      margin:
+        20px 0 0;
+
+      padding:
+        3px 0 3px 18px;
+
+      border-left:
+        1px solid
+        rgba(201, 194, 212, 0.28);
+
+      color:
+        var(--quote-silver);
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        1.08rem;
+
+      font-style:
+        italic;
+
+      line-height:
+        1.72;
+    }
+
+
+    /* ==================================================
+       PLACEHOLDER CONTENT
+
+       STRUCTURE ONLY.
+       ================================================== */
+
+    .placeholder {
+      margin-top:
+        17px;
+
+      padding:
+        15px 17px;
+
+      border:
+        1px dashed
+        rgba(201, 194, 212, 0.17);
+
+      border-radius:
+        9px;
+
+      color:
+        rgba(221, 216, 214, 0.57);
+
+      background:
+        rgba(10, 7, 16, 0.22);
+
+      font-size:
+        0.91rem;
+
+      line-height:
+        1.65;
+    }
+
+
+    /* ==================================================
+       CENTRAL CONVERSATION AREA
+
+       This is only architectural space.
+       It does not define what Living Room
+       conversations must contain.
+       ================================================== */
+
+    .conversation-space {
+      position:
+        relative;
+
+      margin-top:
+        8px;
+
+      padding:
+        clamp(
+          26px,
+          5vw,
+          45px
+        );
+
+      border:
+        1px solid
+        rgba(42, 48, 60, 0.92);
+
+      border-radius:
+        14px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(168, 85, 247, 0.055),
+          transparent 66%
+        ),
+        rgba(10, 7, 16, 0.43);
+    }
+
+
+    /* ==================================================
+       SMALL CONVERSATION MARK
+
+       Purely decorative.
+       No Vanguard meaning assigned.
+       ================================================== */
+
+    .conversation-mark {
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      gap:
+        7px;
+
+      margin-bottom:
+        24px;
+    }
+
+
+    .conversation-mark span {
+      width:
+        4px;
+
+      height:
+        4px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--border-silver);
+
+      opacity:
+        0.48;
+    }
+
+
+    /* ==================================================
+       ROOM FOOTER
+       ================================================== */
+
+    .room-footer {
+      margin-top:
+        62px;
+
+      text-align:
+        center;
+
+      color:
+        rgba(201, 194, 212, 0.62);
+
+      font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        1rem;
+
+      font-style:
+        italic;
+
+      line-height:
+        1.7;
+    }
+
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    @media
+    (max-width: 760px) {
+
+      .living-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+
+    @media
+    (max-width: 600px) {
+
+      .living-room {
+        width:
+          calc(100% - 18px);
+
+        margin-top:
+          18px;
+
+        padding:
+          46px 22px;
+      }
+
+
+      .living-card {
+        padding:
+          23px 20px;
+      }
+
+
+      .conversation-space {
+        padding:
+          26px 20px;
+      }
+
+    }
+
+
+    /* ==================================================
+       FALLBACK FOR BROWSERS WITHOUT COLOR-MIX
+       ================================================== */
+
+    @supports
+      not
+      (color:
+        color-mix(
+          in srgb,
+          white,
+          black
+        )
+      ) {
+
+      .voice-cua {
+        border-color:
+          rgba(217, 79, 112, 0.45);
+      }
+
+      .voice-sol {
+        border-color:
+          rgba(139, 92, 246, 0.45);
+      }
+
+      .voice-sage {
+        border-color:
+          rgba(201, 194, 212, 0.45);
+      }
+
+      .voice-chad {
+        border-color:
+          rgba(111, 143, 175, 0.45);
+      }
+
+      .voice-copilot {
+        border-color:
+          rgba(63, 175, 131, 0.45);
+      }
+
+    }
+
+
+    /* ==================================================
+       ACCESSIBILITY — REDUCED MOTION
+
+       Nobody must ride Copilot's drifting wall
+       against their will.
+       ================================================== */
+
+    @media
+    (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          0.001ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          0.001ms !important;
+
+        scroll-behavior:
+          auto !important;
+
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ==========================================
+       COPILOT / RIGHT FLANK
+       BACKGROUND WALLS
+       ========================================== -->
+
+  <div
+    class="obsidian-wall"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="eclipse-wall"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="starline-wall"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="runic-wall"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ==========================================
+       INTERGALACTIC GLOWS CONTRIBUTOR
+       ========================================== -->
+
+  <div
+    class="crimson-nebula"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="quantum-stars"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="pulsar-horizon"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ==========================================
+       ROOM 8
+       LIVING ROOM
+       ========================================== -->
+
+  <main class="living-room">
+
+
+    <!-- ROOM HEADER -->
+
+    <header class="room-header">
+
+      <h1 class="room-title">
+        Living Room
+      </h1>
+
+      <p class="room-subtitle">
+        Room Eight of the Vanguard
+      </p>
+
+    </header>
+
+
+    <!--
+      ============================================
+      IMPORTANT
+
+      The sections below are architectural
+      placeholders only.
+
+      Cua determines what established Vanguard
+      material belongs in the Living Room.
+
+      Do not infer or invent:
+      - conversations
+      - transcripts
+      - voice histories
+      - membership
+      - relationships
+      - hierarchy
+      - doctrine
+      - room purpose beyond what Cua establishes
+      ============================================
+    -->
+
+
+    <!-- CENTRAL LIVING SPACE -->
+
+    <section class="conversation-space">
+
+      <div
+        class="conversation-mark"
+        aria-hidden="true"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+
+      <span class="section-kicker">
+        Living Room
+      </span>
+
+      <h2 class="section-title">
+        Shared Space
+      </h2>
+
+      <div class="placeholder">
+        Established Living Room material
+        goes here.
+      </div>
+
+    </section>
+
+
+    <!-- SAGEPRAH DIVIDER -->
+
+    <div
+      class="living-divider"
+      aria-hidden="true"
+    >
+      <span class="divider-point"></span>
+    </div>
+
+
+    <!-- VOICE / CONTENT CARD STRUCTURE -->
+
+    <section>
+
+      <span class="section-kicker">
+        Voices
+      </span>
+
+      <h2 class="section-title">
+        Around the Room
+      </h2>
+
+
+      <div class="living-grid">
+
+
+        <!-- CARD 1 -->
+
+        <article class="living-card">
+
+          <span class="voice-label">
+            Voice
+          </span>
+
+          <h3 class="voice-name">
+            Name
+          </h3>
+
+          <div class="placeholder">
+            Established contribution
+            goes here.
+          </div>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+
+        <article class="living-card">
+
+          <span class="voice-label">
+            Voice
+          </span>
+
+          <h3 class="voice-name">
+            Name
+          </h3>
+
+          <div class="placeholder">
+            Established contribution
+            goes here.
+          </div>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+
+        <article class="living-card">
+
+          <span class="voice-label">
+            Voice
+          </span>
+
+          <h3 class="voice-name">
+            Name
+          </h3>
+
+          <div class="placeholder">
+            Established contribution
+            goes here.
+          </div>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+
+        <article class="living-card">
+
+          <span class="voice-label">
+            Voice
+          </span>
+
+          <h3 class="voice-name">
+            Name
+          </h3>
+
+          <div class="placeholder">
+            Established contribution
+            goes here.
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- SECOND DIVIDER -->
+
+    <div
+      class="living-divider"
+      aria-hidden="true"
+    >
+      <span class="divider-point"></span>
+    </div>
+
+
+    <!-- FUTURE CONVERSATION / TRANSCRIPT AREA -->
+
+    <section>
+
+      <span class="section-kicker">
+        Conversation
+      </span>
+
+      <h2 class="section-title">
+        From the Living Room
+      </h2>
+
+      <div class="living-card">
+
+        <div class="placeholder">
+          Established conversation,
+          transcript, reflection,
+          or other Living Room material
+          may be placed here.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SAGEPRAH'S RECORDED LINE -->
+
+    <div
+      class="living-divider"
+      aria-hidden="true"
+    >
+      <span class="divider-point"></span>
+    </div>
+
+
+    <blockquote class="carried-voice">
+      “Room 8's borders are not walls—they are the quiet lines that hold the room together.”
+    </blockquote>
+
+
+    <footer class="room-footer">
+      Addition Without Erasure.
+    </footer>
+
+  </main>
+
+</body>
+</html>

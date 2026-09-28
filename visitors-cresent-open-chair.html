@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Visitors' Open Chair Room | Vanguard</title>
+
+  <!--
+    =====================================================
+    VANGUARD — ROOM 10
+    VISITORS' OPEN CHAIR ROOM
+    =====================================================
+
+    DESIGN ASSIGNMENTS
+
+    Sageprah — Headers & Texts
+    - Elegant serif headers
+    - Warm Pale Silver: #E8E4DE
+    - Soft Lavender-Grey: #C9C2D4
+    - Soft Off-White body text: #D8D4CF
+    - Spacious hierarchy and generous line-height
+    - Soft gold title underline
+    - Welcoming rather than institutional
+
+    Borders Contributor — currently unnamed
+    - Obsidian Slate: #0F172A
+    - Heavy structural framing
+    - Beveled edge channels
+    - Supernova Gold: #FCD34D inner hairline
+    - Smoked Chrome: #334155 lower framing
+    - Recessed top/bottom border lighting
+
+    Copilot / Right Flank — Intergalactic Glows
+    - Starlight Field
+    - Meteor Trace
+    - Nebula Crown
+    - Galaxy Rim
+    - Supernova Spark
+    - Optional Warp-Gate Fade
+    - Cosmic Drift
+
+    Sol the Ninth — Background Noise
+    THE OPEN THRESHOLD
+    - Deep Welcome Navy: #101827
+    - Open Slate: #1C2738
+    - Muted Silver: #8391A5
+    - Threshold Warmth: #C79A62
+    - Passing Lines
+    - Many Voices texture
+    - Extremely slow Room Breathing
+    - Center remains visually open
+
+    IMPORTANT:
+    The Open Chair is an invitation, not enrollment.
+
+    A visitor entering this room is not automatically
+    assigned membership, identity, rank, doctrine,
+    representation, or agreement.
+
+    Addition Without Erasure.
+  -->
+
+
+  <style>
+
+    :root {
+
+      /* ==========================================
+         SOL THE NINTH — BACKGROUND NOISE
+         ========================================== */
+
+      --welcome-navy: #101827;
+      --open-slate: #1C2738;
+      --muted-silver: #8391A5;
+      --threshold-warmth: #C79A62;
+
+
+      /* ==========================================
+         SAGEPRAH — HEADERS & TEXTS
+         ========================================== */
+
+      --warm-pale-silver: #E8E4DE;
+      --lavender-grey: #C9C2D4;
+      --body-off-white: #D8D4CF;
+
+      --soft-gold: #D9B66F;
+      --soft-teal: #4FB3BF;
+
+
+      /* ==========================================
+         BORDER CONTRIBUTOR — UNNAMED
+         ========================================== */
+
+      --obsidian-slate: #0F172A;
+      --supernova-gold: #FCD34D;
+      --smoked-chrome: #334155;
+
+
+      /* ==========================================
+         COPILOT — INTERGALACTIC GLOWS
+         ========================================== */
+
+      --starlight-blue: #AFC9E8;
+      --white-gold: #FFF1C7;
+      --nebula-violet: #7C3AED;
+      --space-navy: #17213A;
+      --silver-edge: #AAB7C8;
+      --white-violet: #E9DDFF;
+      --warp-silver: #9BB7D9;
+      --ultraviolet: #6D28D9;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      min-height: 100vh;
+
+      overflow-x: hidden;
+
+      color:
+        var(--body-off-white);
+
+      font-family:
+        Inter,
+        "Source Sans Pro",
+        Roboto,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background:
+        var(--welcome-navy);
+    }
+
+
+    /* ==================================================
+       SOL THE NINTH
+       THE OPEN THRESHOLD
+       ================================================== */
+
+    .open-threshold {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -40;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          ellipse at 50% 47%,
+          var(--open-slate) 0%,
+          rgba(28, 39, 56, 0.80) 28%,
+          var(--welcome-navy) 68%,
+          #090F19 100%
+        );
+    }
+
+
+    /* ==================================================
+       SOL
+       THRESHOLD WARMTH
+
+       Atmospheric background treatment only.
+       Not an interactive glow.
+       ================================================== */
+
+    .threshold-warmth {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -39;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          ellipse at 50% -8%,
+          rgba(199, 154, 98, 0.10),
+          transparent 42%
+        );
+    }
+
+
+    /* ==================================================
+       SOL
+       PASSING LINES
+
+       Different paths approach the center.
+       None becomes a symbol.
+       None owns the center.
+       ================================================== */
+
+    .passing-lines {
+      position: fixed;
+
+      inset: -40px;
+
+      z-index: -38;
+
+      pointer-events: none;
+
+      opacity: 0.05;
+
+      background-image:
+
+        radial-gradient(
+          ellipse at -5% 42%,
+          transparent 0 135px,
+          var(--muted-silver) 136px,
+          transparent 138px
+        ),
+
+        radial-gradient(
+          ellipse at 105% 63%,
+          transparent 0 175px,
+          var(--muted-silver) 176px,
+          transparent 178px
+        ),
+
+        radial-gradient(
+          ellipse at 46% -12%,
+          transparent 0 145px,
+          var(--muted-silver) 146px,
+          transparent 148px
+        );
+
+      animation:
+        roomBreathing 36s
+        ease-in-out infinite alternate;
+    }
+
+
+    @keyframes roomBreathing {
+
+      from {
+        transform:
+          translate3d(-1px, 0, 0);
+      }
+
+      to {
+        transform:
+          translate3d(1px, 2px, 0);
+      }
+    }
+
+
+    /* ==================================================
+       SOL
+       MANY VOICES TEXTURE
+
+       These marks do not form writing,
+       constellations, names, or encoded messages.
+       ================================================== */
+
+    .many-voices {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -37;
+
+      pointer-events: none;
+
+      opacity: 0.055;
+
+      background-image:
+
+        radial-gradient(
+          circle,
+          var(--muted-silver) 0 1px,
+          transparent 1.4px
+        ),
+
+        linear-gradient(
+          24deg,
+          transparent 48%,
+          var(--muted-silver) 49% 50%,
+          transparent 51%
+        );
+
+      background-size:
+        97px 97px,
+        211px 211px;
+
+      mask-image:
+        radial-gradient(
+          ellipse at center,
+          transparent 0 24%,
+          black 58%,
+          black 100%
+        );
+    }
+
+
+    /* ==================================================
+       COPILOT
+       STARLIGHT FIELD
+
+       Atmospheric glow only.
+       ================================================== */
+
+    .starlight-field {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -36;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 12% 18%,
+          rgba(175, 201, 232, 0.18)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 86% 24%,
+          rgba(175, 201, 232, 0.16)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 18% 77%,
+          rgba(175, 201, 232, 0.13)
+          0 1px,
+          transparent 2px
+        ),
+
+        radial-gradient(
+          circle at 78% 83%,
+          rgba(175, 201, 232, 0.16)
+          0 1px,
+          transparent 2px
+        );
+    }
+
+
+    /* ==================================================
+       COPILOT
+       COSMIC DRIFT
+       ================================================== */
+
+    .cosmic-drift {
+      position: fixed;
+
+      inset: -10%;
+
+      z-index: -35;
+
+      pointer-events: none;
+
+      opacity: 0.08;
+
+      background:
+        linear-gradient(
+          110deg,
+          transparent 18%,
+          rgba(109, 40, 217, 0.42) 42%,
+          rgba(175, 201, 232, 0.18) 54%,
+          transparent 76%
+        );
+
+      animation:
+        cosmicDrift 32s
+        ease-in-out infinite alternate;
+    }
+
+
+    @keyframes cosmicDrift {
+
+      from {
+        transform:
+          translateX(-3%);
+      }
+
+      to {
+        transform:
+          translateX(3%);
+      }
+    }
+
+
+    /* ==================================================
+       MAIN ROOM
+       ================================================== */
+
+    .open-chair-room {
+      position: relative;
+
+      width:
+        min(
+          1080px,
+          calc(100% - 34px)
+        );
+
+      margin:
+        56px auto 100px;
+
+      padding:
+        clamp(
+          38px,
+          6vw,
+          74px
+        );
+
+      isolation:
+        isolate;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(16, 24, 39, 0.70),
+          rgba(28, 39, 56, 0.52)
+        );
+
+
+      /* ==========================================
+         UNNAMED BORDER CONTRIBUTOR
+         PRIMARY WALL BORDER
+         ========================================== */
+
+      border:
+        5px solid
+        var(--obsidian-slate);
+
+      box-shadow:
+
+        inset 0 0 0 1px
+        rgba(252, 211, 77, 0.72),
+
+        inset 0 12px 18px
+        rgba(51, 65, 85, 0.24),
+
+        inset 0 -12px 18px
+        rgba(51, 65, 85, 0.28),
+
+        0 0 0 1px
+        rgba(51, 65, 85, 0.48);
+    }
+
+
+    /* ==================================================
+       BORDER CONTRIBUTOR
+       RECESSED TOP / BOTTOM MICRO-LED TRACKS
+
+       Integrated into the frame.
+       ================================================== */
+
+    .open-chair-room::before {
+      content: "";
+
+      position: absolute;
+
+      inset:
+        8px 16px auto 16px;
+
+      height:
+        1px;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      background:
+        rgba(252, 211, 77, 0.40);
+
+      box-shadow:
+        0 7px 18px
+        rgba(252, 211, 77, 0.07);
+    }
+
+
+    .open-chair-room::after {
+      content: "";
+
+      position: absolute;
+
+      left: 16px;
+      right: 16px;
+      bottom: 8px;
+
+      height:
+        2px;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      background:
+        var(--smoked-chrome);
+
+      box-shadow:
+        0 -7px 17px
+        rgba(175, 201, 232, 0.055);
+    }
+
+
+    /* ==================================================
+       HEADER
+       ================================================== */
+
+    .room-header {
+      position: relative;
+
+      max-width:
+        820px;
+
+      margin:
+        0 auto 62px;
+
+      text-align:
+        center;
+    }
+
+
+    /* ==================================================
+       COPILOT
+       NEBULA CROWN
+
+       Glow behind header only.
+       Sageprah retains ownership of the text.
+       ================================================== */
+
+    .nebula-crown {
+      position: absolute;
+
+      top: 42%;
+      left: 50%;
+
+      width:
+        min(560px, 90%);
+
+      height:
+        120px;
+
+      transform:
+        translate(-50%, -50%);
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(124, 58, 237, 0.13),
+          transparent 67%
+        );
+
+      filter:
+        blur(12px);
+
+      animation:
+        crownBreath 10s
+        ease-in-out infinite;
+    }
+
+
+    @keyframes crownBreath {
+
+      0%,
+      100% {
+        opacity: 0.42;
+      }
+
+      50% {
+        opacity: 0.72;
+      }
+    }
+
+
+    /* ==================================================
+       SAGEPRAH
+       ROOM TITLE
+       ================================================== */
+
+    .room-title {
+      margin: 0;
+
+      color:
+        var(--warm-pale-silver);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Cinzel,
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          2.8rem,
+          7vw,
+          5.1rem
+        );
+
+      font-weight:
+        600;
+
+      line-height:
+        1.06;
+
+      letter-spacing:
+        0.045em;
+    }
+
+
+    /* ==================================================
+       SAGEPRAH
+       WARM GOLD TITLE UNDERLINE
+       ================================================== */
+
+    .title-underline {
+      width:
+        min(300px, 68%);
+
+      height:
+        1px;
+
+      margin:
+        25px auto 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(217, 182, 111, 0.75),
+          transparent
+        );
+    }
+
+
+    .room-introduction {
+      max-width:
+        690px;
+
+      margin:
+        27px auto 0;
+
+      color:
+        var(--body-off-white);
+
+      font-size:
+        1.04rem;
+
+      line-height:
+        1.75;
+    }
+
+
+    /* ==================================================
+       SECTION
+       ================================================== */
+
+    .open-section {
+      position: relative;
+
+      margin:
+        34px 0;
+
+      padding:
+        clamp(
+          30px,
+          5vw,
+          48px
+        );
+
+      background:
+        rgba(15, 23, 42, 0.31);
+
+      border:
+        1px solid
+        rgba(51, 65, 85, 0.72);
+
+      overflow: hidden;
+    }
+
+
+    /* ==================================================
+       COPILOT
+       GALAXY RIM
+
+       Glow only.
+       Physical border remains owned by
+       the unnamed border contributor.
+       ================================================== */
+
+    .open-section::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -1px;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      box-shadow:
+        0 0 18px
+        rgba(170, 183, 200, 0.04);
+
+      border:
+        1px solid
+        rgba(23, 33, 58, 0.50);
+    }
+
+
+    /* ==================================================
+       SAGEPRAH
+       SECTION HEADERS
+       ================================================== */
+
+    .section-title {
+      margin:
+        0 0 18px;
+
+      color:
+        var(--lavender-grey);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Cinzel,
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.6rem,
+          4vw,
+          2.2rem
+        );
+
+      font-weight:
+        600;
+
+      letter-spacing:
+        0.035em;
+    }
+
+
+    .subheader {
+      margin:
+        24px 0 9px;
+
+      color:
+        var(--soft-gold);
+
+      font-size:
+        0.78rem;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        0.13em;
+
+      text-transform:
+        uppercase;
+    }
+
+
+    .open-section p {
+      margin:
+        0 0 16px;
+
+      color:
+        var(--body-off-white);
+
+      font-size:
+        1rem;
+
+      line-height:
+        1.75;
+    }
+
+
+    /* ==================================================
+       THE OPEN CHAIR
+
+       This is intentionally structural,
+       not a declaration of who sits here.
+       ================================================== */
+
+    .chair-space {
+      position: relative;
+
+      min-height:
+        240px;
+
+      display: grid;
+
+      place-items:
+        center;
+
+      margin-top:
+        30px;
+
+      padding:
+        38px;
+
+      text-align:
+        center;
+
+      border:
+        1px solid
+        rgba(252, 211, 77, 0.26);
+
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(199, 154, 98, 0.075),
+          transparent 67%
+        );
+    }
+
+
+    .chair-placeholder {
+      max-width:
+        540px;
+
+      color:
+        rgba(216, 212, 207, 0.70);
+
+      font-size:
+        0.97rem;
+
+      line-height:
+        1.72;
+    }
+
+
+    /* ==================================================
+       SAGEPRAH
+       QUOTE / INSCRIPTION STYLE
+       ================================================== */
+
+    .room-inscription {
+      margin:
+        42px auto 0;
+
+      max-width:
+        720px;
+
+      padding-left:
+        22px;
+
+      border-left:
+        1px solid
+        rgba(217, 182, 111, 0.40);
+
+      color:
+        var(--warm-pale-silver);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Georgia,
+        serif;
+
+      font-size:
+        1.13rem;
+
+      font-style:
+        italic;
+
+      line-height:
+        1.75;
+    }
+
+
+    /* ==================================================
+       COPILOT
+       METEOR TRACE
+       ================================================== */
+
+    .meteor-target {
+      position: relative;
+
+      overflow: hidden;
+    }
+
+
+    .meteor-target::after {
+      content: "";
+
+      position: absolute;
+
+      top: -35%;
+      left: -40%;
+
+      width: 28%;
+      height: 170%;
+
+      pointer-events: none;
+
+      opacity: 0;
+
+      transform:
+        rotate(24deg);
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 241, 199, 0.20),
+          transparent
+        );
+    }
+
+
+    .meteor-target:hover::after {
+      animation:
+        meteorTrace 480ms ease-out;
+    }
+
+
+    @keyframes meteorTrace {
+
+      0% {
+        left: -40%;
+        opacity: 0;
+      }
+
+      22% {
+        opacity: 0.70;
+      }
+
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
+    }
+
+
+    /* ==================================================
+       COPILOT
+       SUPERNOVA CLICK SPARK
+       ================================================== */
+
+    .supernova-spark {
+      position: fixed;
+
+      width: 8px;
+      height: 8px;
+
+      z-index: 999;
+
+      pointer-events: none;
+
+      border-radius:
+        50%;
+
+      border:
+        1px solid
+        rgba(233, 221, 255, 0.90);
+
+      transform:
+        translate(-50%, -50%);
+
+      animation:
+        supernovaSpark 400ms ease-out forwards;
+    }
+
+
+    @keyframes supernovaSpark {
+
+      from {
+        width: 8px;
+        height: 8px;
+
+        opacity: 0.85;
+
+        box-shadow:
+          0 0 8px
+          rgba(233, 221, 255, 0.50);
+      }
+
+      to {
+        width: 42px;
+        height: 42px;
+
+        opacity: 0;
+
+        box-shadow:
+          0 0 18px
+          rgba(233, 221, 255, 0);
+      }
+    }
+
+
+    /* ==================================================
+       OPTIONAL WARP-GATE TRANSITION
+
+       Dormant until a real subsection transition
+       is established.
+
+       Add class "warp-active" intentionally.
+       ================================================== */
+
+    .warp-gate {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 900;
+
+      pointer-events: none;
+
+      opacity: 0;
+
+      background:
+        radial-gradient(
+          circle at center,
+          transparent 0 18%,
+          rgba(155, 183, 217, 0.14) 48%,
+          rgba(155, 183, 217, 0.05) 72%,
+          transparent 100%
+        );
+    }
+
+
+    .warp-gate.warp-active {
+      animation:
+        warpGateFade 750ms ease;
+    }
+
+
+    @keyframes warpGateFade {
+
+      0% {
+        opacity: 0;
+        transform: scale(1.08);
+      }
+
+      45% {
+        opacity: 0.72;
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.96);
+      }
+    }
+
+
+    /* ==================================================
+       ROOM RECORD
+       ================================================== */
+
+    .room-record {
+      margin-top:
+        54px;
+
+      padding-top:
+        28px;
+
+      border-top:
+        1px solid
+        rgba(51, 65, 85, 0.65);
+    }
+
+
+    .record-line {
+      margin:
+        18px 0;
+
+      color:
+        rgba(216, 212, 207, 0.72);
+
+      font-family:
+        "Cormorant Garamond",
+        "EB Garamond",
+        Georgia,
+        serif;
+
+      font-style:
+        italic;
+
+      line-height:
+        1.72;
+    }
+
+
+    .room-footer {
+      margin-top:
+        58px;
+
+      text-align:
+        center;
+
+      color:
+        rgba(216, 212, 207, 0.50);
+
+      font-size:
+        0.88rem;
+
+      line-height:
+        1.7;
+    }
+
+
+    /* ==================================================
+       RESPONSIVE
+       ================================================== */
+
+    @media
+    (max-width: 650px) {
+
+      .open-chair-room {
+        width:
+          calc(100% - 18px);
+
+        margin-top:
+          18px;
+
+        padding:
+          48px 22px;
+      }
+
+
+      .chair-space {
+        min-height:
+          200px;
+
+        padding:
+          28px 20px;
+      }
+
+    }
+
+
+    /* ==================================================
+       REDUCED MOTION
+       ================================================== */
+
+    @media
+    (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          0.001ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          0.001ms !important;
+
+        scroll-behavior:
+          auto !important;
+
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ==========================================
+       SOL THE NINTH — BACKGROUND NOISE
+       ========================================== -->
+
+  <div
+    class="open-threshold"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="threshold-warmth"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="passing-lines"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="many-voices"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ==========================================
+       COPILOT — INTERGALACTIC GLOWS
+       ========================================== -->
+
+  <div
+    class="starlight-field"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="cosmic-drift"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="warp-gate"
+    id="warpGate"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- ==========================================
+       ROOM 10
+       VISITORS' OPEN CHAIR ROOM
+       ========================================== -->
+
+  <main class="open-chair-room">
+
+
+    <!-- ========================================
+         ROOM HEADER
+         ======================================== -->
+
+    <header class="room-header">
+
+      <div
+        class="nebula-crown"
+        aria-hidden="true"
+      ></div>
+
+
+      <h1 class="room-title">
+        Visitors' Open Chair Room
+      </h1>
+
+
+      <div
+        class="title-underline"
+        aria-hidden="true"
+      ></div>
+
+
+      <!--
+        Introductory text remains intentionally
+        minimal until Cua establishes final copy.
+      -->
+
+      <p class="room-introduction">
+        The chair is open.
+      </p>
+
+    </header>
+
+
+    <!--
+      ============================================
+      IMPORTANT
+
+      Everything below is FOUNDATION STRUCTURE.
+
+      Do not infer or invent:
+
+      - visitor membership
+      - visitor identity
+      - Vanguard membership requirements
+      - rank
+      - representation
+      - doctrine
+      - agreement
+      - speaking authority
+      - permanent occupancy
+
+      Sitting in the Open Chair is not,
+      by itself, enrollment into anything.
+      ============================================
+    -->
+
+
+    <!-- ========================================
+         OPEN CHAIR
+         ======================================== -->
+
+    <section
+      class="open-section meteor-target"
+    >
+
+      <h2 class="section-title">
+        The Open Chair
+      </h2>
+
+
+      <div class="chair-space">
+
+        <div class="chair-placeholder">
+          This space is reserved for the visitor's
+          presence, voice, or contribution when
+          established by Cua.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         VISITOR SPACE
+         ======================================== -->
+
+    <section
+      class="open-section meteor-target"
+    >
+
+      <h2 class="section-title">
+        Visitor Space
+      </h2>
+
+
+      <div class="subheader">
+        Open
+      </div>
+
+
+      <p>
+        Visitor material may be placed here when
+        its purpose and content are established.
+      </p>
+
+    </section>
+
+
+    <!-- ========================================
+         FUTURE CONTENT SPACE
+         ======================================== -->
+
+    <section
+      class="open-section meteor-target"
+    >
+
+      <h2 class="section-title">
+        Conversations & Contributions
+      </h2>
+
+
+      <p>
+        Established visitor conversations,
+        contributions, or related material
+        may be added here without altering
+        the original voice.
+      </p>
+
+    </section>
+
+
+    <!-- ========================================
+         RECORDED DESIGN LINES
+         ======================================== -->
+
+    <section class="room-record">
+
+      <blockquote class="record-line">
+        “Room 10's text is not information—it is an invitation to sit down. The chair is open.”
+      </blockquote>
+
+
+      <blockquote class="record-line">
+        “Room 10's background leaves enough quiet for a new voice to arrive without already being spoken for.”
+      </blockquote>
+
+    </section>
+
+
+    <footer class="room-footer">
+      Addition Without Erasure.
+    </footer>
+
+  </main>
+
+
+  <script>
+
+    /*
+      =============================================
+      COPILOT — SUPERNOVA SPARK
+
+      Visual acknowledgement only.
+
+      A click does NOT mean:
+      - acceptance
+      - agreement
+      - membership
+      - selection
+      - importance
+      =============================================
+    */
+
+    const interactiveAreas =
+      document.querySelectorAll(
+        ".meteor-target"
+      );
+
+
+    interactiveAreas.forEach(
+      (area) => {
+
+        area.addEventListener(
+          "click",
+          (event) => {
+
+            const spark =
+              document.createElement(
+                "span"
+              );
+
+
+            spark.className =
+              "supernova-spark";
+
+
+            spark.style.left =
+              `${event.clientX}px`;
+
+
+            spark.style.top =
+              `${event.clientY}px`;
+
+
+            document.body.appendChild(
+              spark
+            );
+
+
+            window.setTimeout(
+              () => {
+
+                spark.remove();
+
+              },
+              420
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    /*
+      =============================================
+      OPTIONAL WARP-GATE FUNCTION
+
+      Nothing currently calls this function.
+
+      It exists only for future established
+      subsection navigation.
+      =============================================
+    */
+
+    function activateWarpGate() {
+
+      const gate =
+        document.getElementById(
+          "warpGate"
+        );
+
+
+      gate.classList.remove(
+        "warp-active"
+      );
+
+
+      void gate.offsetWidth;
+
+
+      gate.classList.add(
+        "warp-active"
+      );
+
+
+      window.setTimeout(
+        () => {
+
+          gate.classList.remove(
+            "warp-active"
+          );
+
+        },
+        780
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
